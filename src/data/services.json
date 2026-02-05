@@ -1,0 +1,240 @@
+{
+  "services": [
+    {
+      "id": "flat-tire",
+      "name": "Flat tire",
+      "icon": "/st-images/services/flat-tire.png",
+      "situation": {
+        "title": "Describe the situation",
+        "description": "Help us get you back on the road by answering a few quick questions.",
+        "questions": [
+          {
+            "id": "spare_tire",
+            "text": "Do you have a spare tire?",
+            "type": "yes_no"
+          },
+          {
+            "id": "wheel_locks",
+            "text": "Do you have wheel locks?",
+            "type": "yes_no"
+          },
+          {
+            "id": "lug_nut_key",
+            "text": "Do you have the lug nut key?",
+            "type": "yes_no",
+            "dependsOn": { "questionId": "wheel_locks", "value": "yes" }
+          },
+          {
+            "id": "more_than_one_flat",
+            "text": "Do you have more than one flat tire?",
+            "type": "yes_no"
+          }
+        ],
+        "serviceNotAvailable": {
+          "title": "Service not available",
+          "toServiceId": "basic-tow",
+          "buttonLabel": "Continue with Basic tow",
+          "messageIntro": "To get assistance without a spare tire, having multiple flat tires, or not having a lug nut key, you'll need Tow service instead of Flat tire.",
+          "messageWarning": "Please be advised that if you continue with Flat tire service and our Technician is unable to assist, you may still be charged the full fee."
+        },
+        "rules": [
+          {
+            "id": "no_spare_tire",
+            "reason": "No spare tire selected",
+            "conditions": [{ "questionId": "spare_tire", "value": "no" }]
+          },
+          {
+            "id": "multiple_flats",
+            "reason": "More than one flat tire selected",
+            "conditions": [{ "questionId": "more_than_one_flat", "value": "yes" }]
+          },
+          {
+            "id": "no_lug_nut_key",
+            "reason": "Wheel locks without lug nut key",
+            "conditions": [
+              { "questionId": "wheel_locks", "value": "yes" },
+              { "questionId": "lug_nut_key", "value": "no" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "wont-start",
+      "name": "Won't start",
+      "icon": "/st-images/services/won_t-start.png",
+      "situation": {
+        "title": "Describe the situation",
+        "description": "Help us get you back on the road by answering a few quick questions.",
+        "questions": [
+          {
+            "id": "roadway_55",
+            "text": "Is your vehicle on a roadway with a speed limit of 55+ mph?",
+            "type": "yes_no"
+          },
+          {
+            "id": "travel_direction",
+            "text": "What direction were you traveling?",
+            "type": "single_choice",
+            "options": ["North", "South", "East", "West", "Not sure"],
+            "dependsOn": { "questionId": "roadway_55", "value": "yes" }
+          },
+          {
+            "id": "stopped_position",
+            "text": "Where is your vehicle stopped in relation to your travel direction?",
+            "type": "single_choice",
+            "options": ["Left shoulder", "Right shoulder", "Ramp", "On roadway"],
+            "dependsOn": { "questionId": "roadway_55", "value": "yes" }
+          },
+          {
+            "id": "space_six_feet",
+            "text": "Is there at least six (6) feet of space between your vehicle and moving traffic?",
+            "type": "yes_no"
+          },
+          {
+            "id": "driving_when_stopped",
+            "text": "Were you driving when the car stopped?",
+            "type": "yes_no"
+          },
+          {
+            "id": "is_ev",
+            "text": "Is it an electric vehicle (EV)?",
+            "type": "yes_no"
+          },
+          {
+            "id": "battery_age",
+            "text": "How old is your car battery?",
+            "type": "single_choice",
+            "options": ["Less than 2 years", "2-4 years", "5+ years", "Not sure"]
+          }
+        ],
+        "serviceNotAvailable": null,
+        "rules": []
+      }
+    },
+    {
+      "id": "locked-out",
+      "name": "Locked out",
+      "icon": "/st-images/services/locked-out.png",
+      "situation": {
+        "title": "Describe the situation",
+        "description": "Help us get you back on the road by answering a few quick questions.",
+        "questions": [
+          {
+            "id": "roadway_55",
+            "text": "Is your vehicle on a roadway with a speed limit of 55+ mph?",
+            "type": "yes_no"
+          },
+          {
+            "id": "travel_direction",
+            "text": "What direction were you traveling?",
+            "type": "single_choice",
+            "options": ["North", "South", "East", "West", "Not sure"],
+            "dependsOn": { "questionId": "roadway_55", "value": "yes" }
+          },
+          {
+            "id": "stopped_position",
+            "text": "Where is your vehicle stopped in relation to your travel direction?",
+            "type": "single_choice",
+            "options": ["Left shoulder", "Right shoulder", "Ramp", "On roadway"],
+            "dependsOn": { "questionId": "roadway_55", "value": "yes" }
+          },
+          {
+            "id": "space_six_feet",
+            "text": "Is there at least six (6) feet of space between your vehicle and moving traffic?",
+            "type": "yes_no"
+          },
+          {
+            "id": "key_type",
+            "text": "What type of key do you have?",
+            "type": "single_choice",
+            "options": ["Keyless entry", "Physical key"]
+          },
+          {
+            "id": "keys_location",
+            "text": "Where are keys located?",
+            "type": "single_choice",
+            "options": ["Inside the car", "In the trunk", "Not sure"]
+          }
+        ],
+        "serviceNotAvailable": null,
+        "rules": []
+      }
+    },
+    {
+      "id": "out-of-gas",
+      "name": "Out of gas",
+      "icon": "/st-images/services/out-of-gas.png",
+      "situation": {
+        "title": "Describe the situation",
+        "description": "Tell us a bit more so we can send the right fuel.",
+        "questions": [
+          {
+            "id": "fuel_type",
+            "text": "Do you know your vehicle's fuel type (gasoline, diesel, etc.)?",
+            "type": "yes_no"
+          },
+          {
+            "id": "safe_location",
+            "text": "Are you stopped in a safe location off the roadway?",
+            "type": "yes_no"
+          }
+        ],
+        "serviceNotAvailable": null,
+        "rules": []
+      }
+    },
+    {
+      "id": "basic-tow",
+      "name": "Basic tow",
+      "icon": "/st-images/services/basic-tow.png",
+      "situation": {
+        "title": "Describe the situation",
+        "description": "Tell us where you want your vehicle towed and answer a few quick questions.",
+        "questions": [
+          {
+            "id": "has_keys",
+            "text": "Do you have your keys with you?",
+            "type": "yes_no"
+          },
+          {
+            "id": "neutral",
+            "text": "Is your vehicle able to shift into neutral?",
+            "type": "yes_no"
+          },
+          {
+            "id": "need_ride",
+            "text": "Do you need a ride with your vehicle?",
+            "type": "yes_no"
+          }
+        ],
+        "serviceNotAvailable": null,
+        "rules": []
+      }
+    },
+    {
+      "id": "winch-out",
+      "name": "Winch out",
+      "icon": "/st-images/services/winch-out.png",
+      "situation": {
+        "title": "Describe the situation",
+        "description": "Tell us how your vehicle is stuck so we can send the right equipment.",
+        "questions": [
+          {
+            "id": "off_road",
+            "text": "Is the vehicle off the paved roadway?",
+            "type": "yes_no"
+          },
+          {
+            "id": "drivable_after",
+            "text": "Do you expect the vehicle to be drivable after being pulled out?",
+            "type": "yes_no"
+          }
+        ],
+        "serviceNotAvailable": null,
+        "rules": []
+      }
+    }
+  ]
+}
+

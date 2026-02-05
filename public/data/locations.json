@@ -1,0 +1,22 @@
+[
+  { "id": "1", "address": "123 Main St, Dallas, TX 75201", "latitude": 32.7767, "longitude": -96.7970 },
+  { "id": "2", "address": "500 Commerce St, Dallas, TX 75201", "latitude": 32.7825, "longitude": -96.7985 },
+  { "id": "3", "address": "1500 Elm St, Dallas, TX 75201", "latitude": 32.7850, "longitude": -96.8000 },
+  { "id": "4", "address": "Reunion Tower, Dallas, TX 75207", "latitude": 32.7755, "longitude": -96.8097 },
+  { "id": "5", "address": "American Airlines Center, Dallas, TX 75219", "latitude": 32.7905, "longitude": -96.8103 },
+  { "id": "6", "address": "Dallas Love Field Airport, Dallas, TX 75235", "latitude": 32.8472, "longitude": -96.8517 },
+  { "id": "7", "address": "DFW International Airport, Dallas, TX 75261", "latitude": 32.8968, "longitude": -97.0380 },
+  { "id": "8", "address": "Fort Worth Stockyards, Fort Worth, TX 76164", "latitude": 32.7884, "longitude": -97.3464 },
+  { "id": "9", "address": "Sundance Square, Fort Worth, TX 76102", "latitude": 32.7514, "longitude": -97.3306 },
+  { "id": "10", "address": "Arlington Stadium, Arlington, TX 76011", "latitude": 32.7473, "longitude": -97.0945 },
+  { "id": "11", "address": "Highway 75 & Belt Line Rd, Richardson, TX 75080", "latitude": 32.9483, "longitude": -96.7297 },
+  { "id": "12", "address": "Galleria Dallas, Dallas, TX 75240", "latitude": 32.9256, "longitude": -96.8247 },
+  { "id": "13", "address": "NorthPark Center, Dallas, TX 75231", "latitude": 32.8747, "longitude": -96.7697 },
+  { "id": "14", "address": "Plano Parkway & US-75, Plano, TX 75074", "latitude": 33.0198, "longitude": -96.6989 },
+  { "id": "15", "address": "I-35E & I-635, Dallas, TX 75229", "latitude": 32.9011, "longitude": -96.8719 },
+  { "id": "16", "address": "Downtown Houston, Houston, TX 77002", "latitude": 29.7604, "longitude": -95.3698 },
+  { "id": "17", "address": "George Bush Intercontinental Airport, Houston, TX 77061", "latitude": 29.9902, "longitude": -95.3368 },
+  { "id": "18", "address": "San Antonio River Walk, San Antonio, TX 78205", "latitude": 29.4241, "longitude": -98.4936 },
+  { "id": "19", "address": "Austin Downtown, Austin, TX 78701", "latitude": 30.2672, "longitude": -97.7431 },
+  { "id": "20", "address": "Oklahoma City Bricktown, Oklahoma City, OK 73104", "latitude": 35.4676, "longitude": -97.5164 }
+]

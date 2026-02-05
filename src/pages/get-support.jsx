@@ -1,0 +1,226 @@
+import { useState } from "react";
+import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { ChevronRight, Send } from "lucide-react";
+import Header from "@/components/home/Header";
+import Container from "@/components/common/Container";
+import Paragraph from "@/components/common/Paragraph";
+import Image from "next/image";
+import ServiceIcon from "@/components/common/ServiceIcon";
+import servicesData from "@/data/services.json";
+
+const services = servicesData.services;
+
+export default function GetSupport() {
+  const router = useRouter();
+  const [selectedServiceId, setSelectedServiceId] = useState(null);
+  const [modalServiceId, setModalServiceId] = useState(null);
+  const [activeTab, setActiveTab] = useState("services"); // 'services' | 'details'
+
+  const getServiceById = (id) =>
+    services.find((service) => service.id === id) || services[0];
+
+  const openModal = (serviceId) => {
+    setModalServiceId(serviceId);
+  };
+
+  const selectService = (serviceId) => {
+    setSelectedServiceId(serviceId);
+    setActiveTab("details");
+  };
+
+  const closeModal = () => {
+    setModalServiceId(null);
+  };
+
+  const openLocationManual = () => {
+    const rescueId =
+      typeof crypto !== "undefined" && crypto.randomUUID
+        ? crypto.randomUUID()
+        : "9512ce6c-a5e8-4e75-b169-44ce13323229";
+    closeModal();
+    const serviceId = modalServiceId || "flat-tire";
+    router.push(`/rescue/${rescueId}/location?service=${serviceId}`);
+  };
+
+  return (
+    <>
+      <Head>
+        <title>Rescue | Curbside SOS</title>
+      </Head>
+      <div className="min-h-screen bg-white text-gray-900 max-w-3xl mx-auto">
+        <Header />
+        <main>
+          <Container className="py-8">
+            {/* Breadcrumbs */}
+            <nav className="mb-8 text-sm text-gray-500">
+              <Link href="/" className="hover:text-primary">
+                Roadside Assistance
+              </Link>
+              <span className="mx-2">/</span>
+              <span className="text-gray-900">Rescue</span>
+            </nav>
+
+            {/* Map Section */}
+            <div className="mb-8 w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
+              <Image
+                src="/st-images/map.png"
+                alt="United States map"
+                width={1280}
+                height={440}
+                className="h-auto w-full object-cover"
+                priority
+              />
+            </div>
+
+
+            {/* Main Content */}
+            <div className="mx-auto max-w-full">
+              {activeTab === "services" && (
+                <>
+                  <h1 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                    What help do you need?
+                  </h1>
+                  <p className="mt-2 text-center text-base text-gray-600 sm:text-lg">
+                    Select from the available services below.
+                  </p>
+
+                  <div className="mt-8 space-y-3">
+                    {services.map(({ id, name, icon }) => (
+                      <button
+                        key={id}
+                        type="button"
+                        onClick={() => selectService(id)}
+                        className={`flex w-full items-center gap-4 rounded-lg border px-4 py-2 text-left transition-colors ${
+                          selectedServiceId === id
+                            ? "border-primary bg-primary/5"
+                            : "border-gray-200 bg-gray-50 hover:border-gray-300 hover:bg-gray-100"
+                        }`}
+                      >
+                        <ServiceIcon src={icon} alt={name} size="md" />
+                        <span className="flex-1 text-xl font-bold text-gray-900">
+                          {name}
+                        </span>
+                        <ChevronRight className="h-5 w-5 text-gray-500" />
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {activeTab === "details" && selectedServiceId && (
+                <>
+                  {(() => {
+                    const service = getServiceById(selectedServiceId);
+                    return (
+                      <div className="mt-4 space-y-6">
+                        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                          <div className="mb-4 flex items-center gap-3">
+                            <ServiceIcon
+                              src={service.icon}
+                              alt={service.name}
+                              size="md"
+                            />
+                            <span className="text-lg font-bold text-gray-900">
+                              {service.name}
+                            </span>
+                          </div>
+                          <p className="text-sm text-gray-700">
+                            {service.situation.description}
+                          </p>
+                        </div>
+
+                        <div className="space-y-3">
+                          <button
+                            type="button"
+                            onClick={() => openModal(selectedServiceId)}
+                            className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-secondary"
+                          >
+                            Continue
+                            <ChevronRight className="h-5 w-5" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setActiveTab("services")}
+                            className="block w-full text-center text-sm font-medium text-primary hover:text-secondary hover:underline"
+                          >
+                            Go back
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </>
+              )}
+            </div>
+          </Container>
+        </main>
+
+        {/* Location Modal */}
+        {modalServiceId && (
+          <>
+            <div
+              role="button"
+              tabIndex={0}
+              onClick={closeModal}
+              onKeyDown={(e) => e.key === "Escape" && closeModal()}
+              className="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm"
+              aria-label="Close modal"
+            />
+            <div
+              className="fixed left-1/2 top-1/2 z-[70] w-full max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-8 shadow-2xl"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="modal-title"
+              aria-describedby="modal-description"
+            >
+              {/* Map Graphic */}
+              <div className="relative mx-auto mb-6 flex h-40 w-40 items-center justify-center  bg-white ">
+                <Image
+                  src="/st-images/location.png"
+                  alt="Location"
+                  width={150}
+                  height={150}
+                  className="object-cover"
+                />
+              </div>
+
+              <h2
+                id="modal-title"
+                className="text-start text-xl pb-4 font-bold text-gray-900 sm:text-2xl"
+              >
+                We can help you with a {getServiceById(modalServiceId).name}
+              </h2>
+              <Paragraph
+                id="modal-description"
+                className="test-start"
+              >
+                Please share your location so we can quickly locate you and
+                provide the help you need, exactly where you are.
+              </Paragraph>
+
+              <div className="mt-8 space-y-4">
+                <button
+                  type="button"
+                  onClick={closeModal}
+                  className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 font-bold uppercase tracking-wide text-white transition-colors hover:bg-secondary"
+                >
+                  <Send className="h-5 w-5" />
+                  Allow Current Location
+                </button>
+                <button
+                  type="button"
+                  onClick={openLocationManual}
+                  className="block w-full text-center text-sm font-medium text-primary hover:text-secondary hover:underline"
+                >
+                  Enter location manually
+                </button>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    </>
+  );
+}
