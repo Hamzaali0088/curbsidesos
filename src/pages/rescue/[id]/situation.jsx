@@ -73,6 +73,21 @@ export default function SituationPage() {
       return;
     }
 
+    // Persist situation answers so they can be sent with the final API request
+    if (typeof window !== "undefined" && id) {
+      try {
+        window.localStorage.setItem(
+          `curbsidesos_rescue_${id}_situation`,
+          JSON.stringify({
+            serviceId: serviceConfig.id,
+            answers,
+          })
+        );
+      } catch (e) {
+        console.error("Failed to persist situation data", e);
+      }
+    }
+
     // Otherwise continue to vehicle step for current service
     router.push(`/rescue/${id}/vehicle?service=${serviceConfig.id}`);
   };
@@ -80,11 +95,37 @@ export default function SituationPage() {
   const handleContinueBasicTow = () => {
     setShowNotAvailable(false);
     if (!notAvailableConfig) {
+      if (typeof window !== "undefined" && id) {
+        try {
+          window.localStorage.setItem(
+            `curbsidesos_rescue_${id}_situation`,
+            JSON.stringify({
+              serviceId: serviceConfig.id,
+              answers,
+            })
+          );
+        } catch (e) {
+          console.error("Failed to persist situation data", e);
+        }
+      }
       router.push(`/rescue/${id}/vehicle?service=${serviceConfig.id}`);
       return;
     }
 
     const targetServiceId = notAvailableConfig.toServiceId || serviceConfig.id;
+    if (typeof window !== "undefined" && id) {
+      try {
+        window.localStorage.setItem(
+          `curbsidesos_rescue_${id}_situation`,
+          JSON.stringify({
+            serviceId: targetServiceId,
+            answers,
+          })
+        );
+      } catch (e) {
+        console.error("Failed to persist situation data", e);
+      }
+    }
     router.push(`/rescue/${id}/vehicle?service=${targetServiceId}`);
   };
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { ChevronRight } from "lucide-react";
@@ -19,12 +19,37 @@ export default function RescueMotoristPage() {
   const { id, service } = router.query;
   const serviceImage = getServiceImage(service);
 
+  const [situationData, setSituationData] = useState(null);
+  const [vehicleData, setVehicleData] = useState(null);
+
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
     phone: "",
     email: "",
   });
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !id) return;
+
+    try {
+      const situationRaw = window.localStorage.getItem(
+        `curbsidesos_rescue_${id}_situation`
+      );
+      const vehicleRaw = window.localStorage.getItem(
+        `curbsidesos_rescue_${id}_vehicle`
+      );
+
+      if (situationRaw) {
+        setSituationData(JSON.parse(situationRaw));
+      }
+      if (vehicleRaw) {
+        setVehicleData(JSON.parse(vehicleRaw));
+      }
+    } catch (e) {
+      console.error("Failed to load persisted rescue data", e);
+    }
+  }, [id]);
 
   const isComplete =
     form.firstName.trim() &&
@@ -36,12 +61,72 @@ export default function RescueMotoristPage() {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!isComplete) return;
-    router.push({
-      pathname: `/rescue/${id}/quotes`,
-      query: { service },
-    });
+
+    let domain = "curbsidesos.com";
+    if (typeof window !== "undefined" && window.location?.hostname) {
+      domain = window.location.hostname;
+    }
+
+    const contactName = `${form.firstName} ${form.lastName}`.trim();
+
+    const descriptionParts = [];
+    if (situationData) {
+      descriptionParts.push(
+        `Situation: ${JSON.stringify(situationData.answers || situationData)}`
+      );
+    }
+    if (vehicleData) {
+      const { year, make, model, color, awd } = vehicleData;
+      const vehicleString = [year, make, model, color]
+        .filter(Boolean)
+        .join(" ");
+      descriptionParts.push(
+        `Vehicle: ${vehicleString}${awd ? " (AWD)" : ""}`
+      );
+    }
+
+    const description = descriptionParts.join(" | ");
+
+    const payload = {
+      messages: {
+        domain,
+        contact_name: contactName,
+        email: form.email,
+        phone: form.phone,
+        message: "Rescue request from motorist form",
+        description,
+        situation: situationData,
+        vehicle: vehicleData,
+      },
+      queueName: "curbsidesos_com",
+    };
+
+    try {
+      const res = await fetch(
+        "https://rabbit.logicalcrm.com/api/add_in_queue",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer AKIA3WTNB4VOJYIFVP7F",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (!res.ok) {
+        console.error("Failed to enqueue rescue request", await res.text());
+      }
+    } catch (e) {
+      console.error("Error calling add_in_queue API", e);
+    } finally {
+      router.push({
+        pathname: `/rescue/${id}/quotes`,
+        query: { service },
+      });
+    }
   };
 
   return (

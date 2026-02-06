@@ -38,6 +38,17 @@ export default function RescueVehiclePage() {
 
   const handleContinue = () => {
     if (!isComplete) return;
+    // Persist vehicle details so they can be sent with the final API request
+    if (typeof window !== "undefined" && id) {
+      try {
+        window.localStorage.setItem(
+          `curbsidesos_rescue_${id}_vehicle`,
+          JSON.stringify(form)
+        );
+      } catch (e) {
+        console.error("Failed to persist vehicle data", e);
+      }
+    }
     router.push({
       pathname: `/rescue/${id}/motorist`,
       query: { service },
