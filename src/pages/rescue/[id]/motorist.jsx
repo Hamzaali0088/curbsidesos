@@ -39,7 +39,7 @@ export default function RescueMotoristPage() {
   const handleSubmit = () => {
     if (!isComplete) return;
     router.push({
-      pathname: `/rescue/${id}/confirm`,
+      pathname: `/rescue/${id}/quotes`,
       query: { service },
     });
   };

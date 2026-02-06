@@ -170,13 +170,21 @@
         "description": "Tell us a bit more so we can send the right fuel.",
         "questions": [
           {
-            "id": "fuel_type",
-            "text": "Do you know your vehicle's fuel type (gasoline, diesel, etc.)?",
-            "type": "yes_no"
+            "id": "vehicle_fuel",
+            "text": "What fuel does your vehicle use?",
+            "type": "single_choice",
+            "options": ["Gasoline", "Diesel", "Electric"]
           },
           {
-            "id": "safe_location",
-            "text": "Are you stopped in a safe location off the roadway?",
+            "id": "gas_type",
+            "text": "What type of gas does your vehicle need?",
+            "type": "single_choice",
+            "options": ["Regular (87)", "Premium (91-94)"],
+            "dependsOn": { "questionId": "vehicle_fuel", "value": "Gasoline" }
+          },
+          {
+            "id": "battery_dead",
+            "text": "Is your battery dead?",
             "type": "yes_no"
           }
         ],
