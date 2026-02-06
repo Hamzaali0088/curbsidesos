@@ -65,6 +65,16 @@ export default function RescueLocationPage() {
 
   const handleContinue = () => {
     if (!selectedLocation) return;
+    if (typeof window !== "undefined" && id && selectedLocation) {
+      try {
+        window.localStorage.setItem(
+          `curbsidesos_rescue_${id}_location`,
+          JSON.stringify(selectedLocation)
+        );
+      } catch (e) {
+        console.error("Failed to persist location data", e);
+      }
+    }
     router.push(`/rescue/${id}/situation?service=${serviceId}`);
   };
 

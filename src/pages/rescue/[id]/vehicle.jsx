@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { ChevronRight } from "lucide-react";
@@ -6,17 +6,22 @@ import Header from "@/components/home/Header";
 import Container from "@/components/common/Container";
 import ServiceIcon from "@/components/common/ServiceIcon";
 import FloatingInput from "@/components/common/FloatingInput";
+import servicesData from "@/data/services.json";
 
-function getServiceImage(service) {
-  if (service === "basic-tow") return "/st-images/services/basic-tow.png";
-  if (service === "flat-tire") return "/st-images/services/flat-tire.png";
-  return "/st-images/services/basic-tow.png";
+function getServiceConfig(serviceId) {
+  const { services } = servicesData;
+  return services.find((service) => service.id === serviceId) || services[0];
 }
 
 export default function RescueVehiclePage() {
   const router = useRouter();
   const { id, service } = router.query;
-  const serviceImage = getServiceImage(service);
+  const serviceId =
+    typeof service === "string" && service.length > 0 ? service : "flat-tire";
+  const serviceConfig = useMemo(
+    () => getServiceConfig(serviceId),
+    [serviceId]
+  );
 
   const [form, setForm] = useState({
     make: "",
@@ -96,13 +101,14 @@ export default function RescueVehiclePage() {
                     on the scene.
                   </p>
                 </div>
-                {service && (
+                {serviceConfig && (
                   <div className="hidden items-center gap-2 sm:flex">
                     <ServiceIcon
-                      src={serviceImage}
-                      alt="Selected service"
+                      src={serviceConfig.icon}
+                      alt={serviceConfig.name}
                       size="sm"
                       className="border-none bg-primary/10"
+                      isBorder={false}
                     />
                   </div>
                 )}
@@ -115,7 +121,7 @@ export default function RescueVehiclePage() {
                   handleContinue();
                 }}
               >
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-1">
                   <FloatingInput
                     id="make"
                     label="Make"
@@ -132,7 +138,7 @@ export default function RescueVehiclePage() {
                   />
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-1">
                   <FloatingInput
                     id="year"
                     label="Year"

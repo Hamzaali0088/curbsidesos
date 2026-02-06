@@ -73,8 +73,6 @@ export default function Header({ contactNumber }) {
 
                 )}
 
-
-
               </div>
 
             </div>

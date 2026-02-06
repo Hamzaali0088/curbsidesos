@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { ChevronRight } from "lucide-react";
@@ -7,18 +7,16 @@ import Container from "@/components/common/Container";
 import Image from "next/image";
 import ServiceIcon from "@/components/common/ServiceIcon";
 import FloatingInput from "@/components/common/FloatingInput";
+import servicesData from "@/data/services.json";
 
-function getServiceImage(service) {
-  if (service === "basic-tow") return "/st-images/services/basic-tow.png";
-  if (service === "flat-tire") return "/st-images/services/flat-tire.png";
-  return "/st-images/services/basic-tow.png";
+function getServiceConfig(serviceId) {
+  const { services } = servicesData;
+  return services.find((service) => service.id === serviceId) || services[0];
 }
 
 export default function RescueMotoristPage() {
   const router = useRouter();
   const { id, service } = router.query;
-  const serviceImage = getServiceImage(service);
-
   const [situationData, setSituationData] = useState(null);
   const [vehicleData, setVehicleData] = useState(null);
 
@@ -28,6 +26,22 @@ export default function RescueMotoristPage() {
     phone: "",
     email: "",
   });
+
+  const serviceIdFromQuery =
+    typeof service === "string" && service.length > 0 ? service : null;
+
+  const effectiveServiceId = useMemo(() => {
+    if (serviceIdFromQuery) return serviceIdFromQuery;
+    if (situationData && typeof situationData.serviceId === "string") {
+      return situationData.serviceId;
+    }
+    return "flat-tire";
+  }, [serviceIdFromQuery, situationData]);
+
+  const serviceConfig = useMemo(
+    () => getServiceConfig(effectiveServiceId),
+    [effectiveServiceId]
+  );
 
   useEffect(() => {
     if (typeof window === "undefined" || !id) return;
@@ -169,13 +183,14 @@ export default function RescueMotoristPage() {
                     will provide updates on your service.
                   </p>
                 </div>
-                {service && (
+                {serviceConfig && (
                   <div className="hidden items-center gap-2 sm:flex">
                     <ServiceIcon
-                      src={serviceImage}
-                      alt="Selected service"
+                      src={serviceConfig.icon}
+                      alt={serviceConfig.name}
                       size="sm"
                       className="border-none bg-primary/10"
+                      isBorder={false}
                     />
                   </div>
                 )}
@@ -188,7 +203,7 @@ export default function RescueMotoristPage() {
                   handleSubmit();
                 }}
               >
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-1">
 
                     <FloatingInput  
                       id="firstName"
@@ -207,7 +222,7 @@ export default function RescueMotoristPage() {
                 </div>
 
                 <div className="space-y-4">
-                    <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="grid gap-4 sm:grid-cols-1">
                       
                     <FloatingInput
                       id="phone"
