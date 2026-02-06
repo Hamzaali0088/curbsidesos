@@ -77,11 +77,11 @@ export default function RescueLocationPage() {
       <Head>
         <title>Set your location | Curbside SOS</title>
       </Head>
-      <div className="min-h-screen bg-white text-gray-900 max-w-3xl mx-auto">
-        <Header />
+      <div className="min-h-screen bg-white text-gray-900 max-w-2xl mx-auto">
+        <Header contactNumber="(214) 396-4751"/>
         <main>
           <Container className="py-8">
-            <div className="mx-auto max-w-2xl">
+            <div className="mx-auto max-w-full">
               <div className="flex items-start justify-between gap-6">
                 <div>
                   <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
@@ -97,7 +97,8 @@ export default function RescueLocationPage() {
                       src={serviceConfig.icon}
                       alt={serviceConfig.name}
                       size="sm"
-                      className="border-none bg-primary/10"
+                      isBorder={false}
+                      className="bg-primary/10"
                     />
                   </div>
                 )}

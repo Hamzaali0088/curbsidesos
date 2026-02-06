@@ -6,6 +6,7 @@ import Header from "@/components/home/Header";
 import Container from "@/components/common/Container";
 import Image from "next/image";
 import ServiceIcon from "@/components/common/ServiceIcon";
+import FloatingInput from "@/components/common/FloatingInput";
 
 function getServiceImage(service) {
   if (service === "basic-tow") return "/st-images/services/basic-tow.png";
@@ -48,11 +49,11 @@ export default function RescueMotoristPage() {
       <Head>
         <title>How can your Technician reach you? | Curbside SOS</title>
       </Head>
-      <div className="min-h-screen bg-white text-gray-900">
-        <Header />
+      <div className="min-h-screen bg-white text-gray-900 max-w-2xl mx-auto">
+        <Header contactNumber="(214) 396-4751"/>
         <main>
           <Container className="py-10">
-            <div className="mx-auto max-w-3xl">
+            <div className="mx-auto max-w-full">
               {/* Step indicator */}
               <div className="mb-8">
                 <div className="flex items-center justify-between gap-3 text-xs font-medium uppercase tracking-wide">
@@ -60,10 +61,12 @@ export default function RescueMotoristPage() {
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs text-white">
                       ✓
                     </div>
+                    <div className="ml-2 flex-1 h-[2px] bg-primary" />
                   {/* Step 2 - completed */}
                   <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs text-white">
                     ✓
                   </div>
+                  <div className="ml-2 flex-1 h-[2px] bg-primary" />
                   {/* Step 3 - active */}
                   <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs text-white">
                     3
@@ -101,72 +104,45 @@ export default function RescueMotoristPage() {
                 }}
               >
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <label
-                      htmlFor="firstName"
-                      className="mb-1 block text-sm font-medium text-gray-800"
-                    >
-                      First name *
-                    </label>
-                    <input
+
+                    <FloatingInput  
                       id="firstName"
+                      label="First name *"
                       type="text"
                       value={form.firstName}
                       onChange={(e) => handleChange("firstName", e.target.value)}
-                      className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                     />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="lastName"
-                      className="mb-1 block text-sm font-medium text-gray-800"
-                    >
-                      Last name *
-                    </label>
-                    <input
+                    <FloatingInput
                       id="lastName"
+                      label="Last name *"
                       type="text"
                       value={form.lastName}
                       onChange={(e) => handleChange("lastName", e.target.value)}
-                      className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                     />
-                  </div>
                 </div>
 
                 <div className="space-y-4">
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="mb-1 block text-sm font-medium text-gray-800"
-                    >
-                      Phone number *
-                    </label>
-                    <input
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      
+                    <FloatingInput
                       id="phone"
+                      label="Phone number *"
                       type="tel"
                       value={form.phone}
                       onChange={(e) => handleChange("phone", e.target.value)}
-                      className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                     />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="mb-1 block text-sm font-medium text-gray-800"
-                    >
-                      Email *
-                    </label>
-                    <input
+                    <FloatingInput
                       id="email"
+                      label="Email *"
                       type="email"
                       value={form.email}
                       onChange={(e) => handleChange("email", e.target.value)}
-                      className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                     />
-                    <p className="mt-1 text-xs text-gray-500">
-                      We&apos;ll send you a receipt.
-                    </p>
-                  </div>
+                    </div>
+                    
+                  <p className="mt-1 text-xs text-gray-500">
+                    We&apos;ll send you a receipt.
+                  </p>
                 </div>
 
                 <div className="mt-8 space-y-3">

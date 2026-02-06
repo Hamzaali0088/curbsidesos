@@ -49,8 +49,8 @@ export default function RescueVehiclePage() {
       <Head>
         <title>What type of car do you have? | Curbside SOS</title>
       </Head>
-      <div className="min-h-screen bg-white text-gray-900 max-w-3xl mx-auto">
-        <Header />
+      <div className="min-h-screen bg-white text-gray-900 max-w-2xl mx-auto">
+        <Header contactNumber="(214) 396-4751"/>
         <main>
           <Container className="py-10">
             <div className="mx-auto max-w-3xl">
@@ -67,7 +67,7 @@ export default function RescueVehiclePage() {
                       <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs text-white">
                         2
                       </div>
-                      <div className="ml-2 flex-1 h-[2px] bg-primary" />
+                      <div className="ml-2 flex-1 h-[2px] bg-gray-200" />
                   {/* Step 3 - upcoming */}
                   <div className="flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white text-xs text-gray-500">
                     3

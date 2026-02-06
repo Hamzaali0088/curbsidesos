@@ -49,8 +49,8 @@ export default function GetSupport() {
       <Head>
         <title>Rescue | Curbside SOS</title>
       </Head>
-      <div className="min-h-screen bg-white text-gray-900 max-w-3xl mx-auto">
-        <Header />
+      <div className="min-h-screen bg-white text-gray-900 max-w-2xl mx-auto">
+        <Header contactNumber="(214) 396-4751"/>
         <main>
           <Container className="py-8">
             {/* Breadcrumbs */}
@@ -115,8 +115,8 @@ export default function GetSupport() {
                     const service = getServiceById(selectedServiceId);
                     return (
                       <div className="mt-4 space-y-6">
-                        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                          <div className="mb-4 flex items-center gap-3">
+                        <div className="rounded-xl border border-gray-200 bg-white px-6 py-4 shadow-sm">
+                          <div className=" flex items-center gap-3">
                             <ServiceIcon
                               src={service.icon}
                               alt={service.name}
@@ -126,10 +126,10 @@ export default function GetSupport() {
                               {service.name}
                             </span>
                           </div>
-                          <p className="text-sm text-gray-700">
+                        </div>
+                          <p className="text-lg md:text-xl font-medium text-gray-700">
                             {service.situation.description}
                           </p>
-                        </div>
 
                         <div className="space-y-3">
                           <button

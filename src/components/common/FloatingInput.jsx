@@ -31,7 +31,7 @@ export default function FloatingInput({
         htmlFor={id}
         className={`pointer-events-none absolute left-3 text-sm transition-all duration-200 ${
           isFocused || hasValue
-            ? "top-1 text-xs text-primary"
+            ? "top-[-9px] bg-white px-1 text-xs text-primary"
             : "top-1/2 -translate-y-1/2 text-gray-500"
         }`}
       >

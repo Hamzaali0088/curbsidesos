@@ -7,6 +7,7 @@ const SIZE_CLASSES = {
 };
 
 export default function ServiceIcon({
+  isBorder = true,
   src,
   alt,
   size = "md",
@@ -16,7 +17,7 @@ export default function ServiceIcon({
 
   return (
     <div
-      className={`flex items-center h-20 w-20 justify-center rounded-full border-2 border-gray-300 `}
+      className={`flex items-center h-20 w-20 justify-center rounded-full ${isBorder ? "border-2 border-gray-300" : ""} `}
     >
       <Image
         src={src}

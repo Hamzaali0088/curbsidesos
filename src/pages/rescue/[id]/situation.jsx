@@ -93,11 +93,11 @@ export default function SituationPage() {
       <Head>
         <title>Describe the situation | Curbside SOS</title>
       </Head>
-      <div className="min-h-screen bg-white text-gray-900 max-w-3xl mx-auto">
-        <Header />
+      <div className="min-h-screen bg-white text-gray-900 max-w-2xl mx-auto">
+        <Header contactNumber="(214) 396-4751"  />
         <main>
           <Container className="py-10">
-            <div className="mx-auto max-w-3xl">
+            <div className="mx-auto max-w-full">
               {/* Step indicator */}
               <div className="mb-8">
                 <div className="flex items-center justify-between gap-3 text-xs font-medium uppercase tracking-wide">

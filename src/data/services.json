@@ -6,7 +6,7 @@
       "icon": "/st-images/services/flat-tire.png",
       "situation": {
         "title": "Describe the situation",
-        "description": "Help us get you back on the road by answering a few quick questions.",
+        "description": "When roadside assistance arrives, they swiftly assess the situation, replace the flat tire with a spare, and ensure it's properly inflated before you depart.",
         "questions": [
           {
             "id": "spare_tire",

@@ -48,16 +48,22 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
       >
         <span className="text-lg font-bold text-gray-900">{question}</span>
         <ChevronDown
-          className={`h-5 w-5 shrink-0 text-gray-500 transition-transform ${
+          className={`h-5 w-5 shrink-0 text-gray-500 transition-transform duration-500 ${
             isOpen ? "rotate-180" : ""
           }`}
         />
       </button>
-      {isOpen && (
-        <div className="pb-5 pr-8 text-gray-600">
-          <Paragraph>{answer}</Paragraph>
+      <div
+        className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="min-h-0 overflow-hidden">
+          <div className="pb-5 pr-8 text-gray-600">
+            <Paragraph>{answer}</Paragraph>
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
