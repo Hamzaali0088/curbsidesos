@@ -7,9 +7,9 @@ import Container from "@/components/common/Container";
 import servicesData from "@/data/services.json";
 import ServiceIcon from "@/components/common/ServiceIcon";
 import Image from "next/image";
-import { Star } from "lucide-react";
+import { CircleDashed, LoaderCircle, Star } from "lucide-react";
 
-const STEP_DURATION_MS = 4000;
+const STEP_DURATION_MS = 6000;
 
 const LocationMap = dynamic(
   () => import("@/components/rescue/LocationMap"),
@@ -22,15 +22,50 @@ const DEFAULT_ZOOM = 10;
 const steps = [
   "skeleton",
   "highly_rated",
-  "bring_fuel",
-  "insured_techs",
+  "bring_equipment",
+  "insured_techs", 
   "track_technician",
   "no_quotes",
 ];
 
+const BRING_EQUIPMENT_IMAGES = {
+  "flat-tire": "/st-images/bring_equipment/flat-tire.png",
+  "wont-start": "/st-images/bring_equipment/won_t-start.png",
+  "locked-out": "/st-images/bring_equipment/locked-out.png",
+  "out-of-gas": "/st-images/bring_equipment/out-fo-gas.webp",
+  "basic-tow": "/st-images/bring_equipment/basic-tow.png",
+  "winch-out": "/st-images/bring_equipment/winch-out.png",
+};
+
 function getServiceConfig(serviceId) {
   const { services } = servicesData;
   return services.find((service) => service.id === serviceId) || services[0];
+}
+
+const BRING_EQUIPMENT_DESCRIPTIONS = {
+  "flat-tire":
+    "A Technician will bring the right tools and equipment to replace your flat tire and get you back on the road.",
+  "wont-start":
+    "A Technician will bring jump-start equipment or battery service to get your vehicle started.",
+  "locked-out":
+    "A Technician will bring lockout tools to safely get you back into your vehicle.",
+  "out-of-gas":
+    "A Technician will bring a few gallons of fuel for your tank so that you can drive to a nearby service station to fill up.",
+  "basic-tow":
+    "A Technician will bring a tow truck to transport your vehicle to your chosen destination.",
+  "winch-out":
+    "A Technician will bring winching equipment to pull your vehicle to safe, firm ground.",
+};
+
+function getBringEquipmentImage(serviceId) {
+  return BRING_EQUIPMENT_IMAGES[serviceId] ?? "/st-images/bring_equipment/flat-tire.png";
+}
+
+function getBringEquipmentDescription(serviceId) {
+  return (
+    BRING_EQUIPMENT_DESCRIPTIONS[serviceId] ??
+    BRING_EQUIPMENT_DESCRIPTIONS["flat-tire"]
+  );
 }
 
 export default function RescueQuotesPage() {
@@ -111,8 +146,17 @@ export default function RescueQuotesPage() {
                 <div className="flex items-center justify-center gap-2">
                   <Image src="/st-images/google.png" alt="Google" width={100} height={100} className="w-10 h-10" />
                   <div className="text-xs text-gray-600 text-center">
-                    <h4 className="flex items-center justify-start text-yellow-500"><Star fill style={{ color: "#FAAF03" }} className="w-4 h-4 text-yellow-500 " /><Star fill style={{ color: "#FAAF03" }} className="w-4 h-4 text-yellow-500 " strokeWidth={1} /><Star fill style={{ color: "#FAAF03" }} className="w-4 h-4 text-yellow-500 " strokeWidth={1} /><Star fill style={{ color: "#FAAF03" }} className="w-4 h-4 text-yellow-500 " strokeWidth={1} /><Star fill style={{ color: "#FAAF03" }} className="w-4 h-4 text-yellow-500 " strokeWidth={1} /> </h4>
-                    <h4>4.2 / 5.0 average rating</h4>
+                    <h4 className="flex items-center justify-start gap-0.5">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Star
+                        key={i}
+                        fill="#FAAF03"
+                        stroke="#FAAF03"
+                        className="h-4 w-4 shrink-0"
+                      />
+                    ))}
+                  </h4>
+                    <h4 className="pt-1">4.2 / 5.0 average rating</h4>
                   </div>
                 </div>
               </div>
@@ -120,21 +164,26 @@ export default function RescueQuotesPage() {
                 <h3 className="text-xs font-semibold uppercase tracking-wide border-b border-gray-200 pb-2 text-gray-500">
                   Trusted by
                 </h3>
-                <Image src="/st-images/geico.png" alt="Trusted by" width={100} height={100} className="w-auto h-18 -mb-5" />
-                <Image src="/st-images/allstate.png" alt="Trusted by" width={100} height={100} className="w-auto h-10" />
+                <Image src="/st-images/geico.png" alt="Trusted by" width={100} height={100} className="w-auto h-10 " />
+                <Image src="/st-images/allstate.png" alt="Trusted by" width={100} height={100} className="w-auto h-12" />
                 <Image src="/st-images/nsd.png" alt="Trusted by" width={100} height={100} className="w-auto h-10" />
               </div>
             </div>
           );
-        case "bring_fuel":
+        case "bring_equipment":
           return (
             <div className="mt-10 space-y-6">
               <div className="flex flex-col items-center gap-6 rounded-2xl px-6 py-10">
-                <Image src="/st-images/out-of-gas-v1@2x.webp" alt="Fuel" width={1000} height={1000} className="w-full h-auto" />
-                <p className=" text-start text-lg text-gray-700">
-                  A Technician will bring a few gallons of fuel for your tank
-                  so that you can drive to a nearby service station to fill up.
-                </p>
+              <Image
+                src={getBringEquipmentImage(serviceId)}
+                alt={serviceConfig ? `Track Technician - ${serviceConfig.name}` : "Track Technician"}
+                width={1000}
+                height={1000}
+                className="w-full h-auto"
+              />
+                <p className="text-start text-lg text-gray-700">
+                {getBringEquipmentDescription(serviceId)}
+              </p>
               </div>
             </div>
           );
@@ -155,7 +204,11 @@ export default function RescueQuotesPage() {
                 Track your Technician while they&apos;re en route and get live
                 ETA updates.
               </p>
-              <p className="text-xs text-gray-500">Finishing up…</p>
+              <div className="flex items-center justify-center gap-2">  <div className="flex items-center justify-center gap-2">
+                  <LoaderCircle className="w-6 h-6  animate-spin text-primary" strokeWidth={3} />
+                  <p className="text-sm text-gray-500">Finishing up</p>
+                </div>
+              </div>
             </div>
           );
         case "no_quotes":

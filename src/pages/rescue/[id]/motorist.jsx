@@ -151,7 +151,7 @@ export default function RescueMotoristPage() {
       <div className="min-h-screen bg-white text-gray-900 max-w-2xl mx-auto">
         <Header contactNumber="(214) 396-4751"/>
         <main>
-          <Container className="py-10">
+          <Container className="pb-10 pt-4">
             <div className="mx-auto max-w-full">
               {/* Step indicator */}
               <div className="mb-8">

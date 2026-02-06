@@ -226,17 +226,25 @@
       "icon": "/st-images/services/winch-out.png",
       "situation": {
         "title": "Describe the situation",
-        "description": "Tell us how your vehicle is stuck so we can send the right equipment.",
+        "description": "Help us get you back on the road by answering a few quick questions.",
         "questions": [
           {
-            "id": "off_road",
-            "text": "Is the vehicle off the paved roadway?",
-            "type": "yes_no"
+            "id": "stuck_on_object",
+            "text": "Are you stuck on top of an object?",
+            "type": "single_choice",
+            "options": ["Yes", "No", "Don't know"]
           },
           {
-            "id": "drivable_after",
-            "text": "Do you expect the vehicle to be drivable after being pulled out?",
-            "type": "yes_no"
+            "id": "close_to_road",
+            "text": "Is your vehicle close enough—within 10 feet—to the road or firm ground?",
+            "type": "single_choice",
+            "options": ["Yes", "No", "Don't know"]
+          },
+          {
+            "id": "vehicle_damage",
+            "text": "Is there damage to your vehicle?",
+            "type": "single_choice",
+            "options": ["Yes", "No", "Don't know"]
           }
         ],
         "serviceNotAvailable": null,

@@ -137,7 +137,7 @@ export default function SituationPage() {
       <div className="min-h-screen bg-white text-gray-900 max-w-2xl mx-auto">
         <Header contactNumber="(214) 396-4751"  />
         <main>
-          <Container className="py-10">
+          <Container className="pb-10 pt-4">
             <div className="mx-auto max-w-full">
               {/* Step indicator */}
               <div className="mb-8">
@@ -159,10 +159,28 @@ export default function SituationPage() {
                 </div>
               </div>
 
-              <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
-                {situation.title}
-              </h1>
-              <p className="mt-2 text-gray-600">{situation.description}</p>
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+                    {situation.title}
+                  </h1>
+                  <p className="mt-2 text-gray-600">{situation.description}</p>
+                </div>
+                {serviceConfig && (
+                  <div className="hidden items-center gap-2 sm:flex sm:flex-col sm:items-center">
+                    <ServiceIcon
+                      src={serviceConfig.icon}
+                      alt={serviceConfig.name}
+                      size="sm"
+                      isBorder={false}
+                      className="bg-primary/10"
+                    />
+                    {/* <span className="text-xs font-semibold uppercase tracking-wide text-gray-700">
+                      {serviceConfig.name}
+                    </span> */}
+                  </div>
+                )}
+              </div>
 
               <div className="mt-6">
                 {situation.questions.map((question) => {
@@ -173,7 +191,7 @@ export default function SituationPage() {
                       key={question.id}
                       className={`space-y-2 overflow-hidden transition-all duration-700 ${
                         visible
-                          ? "mt-6 max-h-60 opacity-100"
+                          ? "mt-6 max-h-96 opacity-100"
                           : "mt-0 max-h-0 opacity-0"
                       }`}
                     >
@@ -182,7 +200,7 @@ export default function SituationPage() {
                       </p>
                       {question.type === "single_choice" &&
                       Array.isArray(question.options) ? (
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col gap-6">
                           {question.options.map((option) => (
                             <label
                               key={option}
