@@ -1,0 +1,189 @@
+{
+  "categories": [
+    {
+      "id": "towing",
+      "title": "Towing",
+      "items": [
+        {
+          "question": "How do I request a tow through your network?",
+          "answer": "To request a tow, visit our website, select your location, and provide your vehicle information, contact information, your towing destination and any additional details about your job to receive quotes from available providers in our network. Our network ensures reliable service nationwide, offering you choices based on pricing, location, and availability."
+        },
+        {
+          "question": "Can all types of vehicles be towed by your network providers?",
+          "answer": "Our network includes providers equipped to handle a wide range of cars and trucks. Specify your vehicle type when requesting service to ensure the appropriate equipment and tow truck are dispatched to your location."
+        },
+        {
+          "question": "What should I do while waiting for the tow truck?",
+          "answer": "Ensure your vehicle is safely positioned away from traffic, and if you are in an unsafe location, call 911. Turn on your hazard lights, stay inside your vehicle if safe, and wait for the tow truck in a location where you can see them approaching. Keep your phone close by in case the service provider needs to contact you."
+        },
+        {
+          "question": "Are there additional costs for towing to a specific location?",
+          "answer": "Towing costs can vary based on distance, vehicle type, and provider. While our network aims to offer transparent pricing, we recommend discussing your specific towing needs and destination with the provider to receive an accurate quote before service begins."
+        },
+        {
+          "question": "How do I know which towing provider to choose from your network?",
+          "answer": "After providing your specific job details, you will receive quotes with ETA and price estimates from available providers. At that time, you can make an informed decision to select the provider that works best for you."
+        }
+      ]
+    },
+    {
+      "id": "battery-issues",
+      "title": "Battery Issues",
+      "items": [
+        {
+          "question": "What services are available for a dead battery?",
+          "answer": "Our network providers offer battery jump-start services. If your vehicle won't start, a service provider can quickly assist you. Some providers will coordinate a battery replacement and will be dependent on the provider."
+        },
+        {
+          "question": "How long does it take for a battery jump-start service to arrive?",
+          "answer": "Response times for battery jump-start services vary based on location, traffic, and provider availability. Our network aims to provide prompt service, and providers will give you an estimated time of arrival when you contact them."
+        },
+        {
+          "question": "Can a dead battery be diagnosed on the spot, or do I need to visit a service center?",
+          "answer": "Many of our network providers are equipped to diagnose a dead battery on the spot. They can assess whether the battery needs a simple jump-start or a complete replacement."
+        },
+        {
+          "question": "What should I do if a jump-start doesn't work for my vehicle?",
+          "answer": "If a jump-start does not resolve the issue, it may indicate a more serious problem with your battery or vehicle's electrical system. The service provider can advise you on the next steps, which may include towing your vehicle to a repair facility for further diagnosis and repair."
+        },
+        {
+          "question": "How can I prevent battery issues in the future?",
+          "answer": "Regular maintenance is key to preventing battery issues. This includes checking the battery's charge level, ensuring the terminals are clean and tight, and replacing the battery every 2\u20113 years, depending on usage and climate. Some of our network providers offer preventative maintenance services, including battery checks."
+        }
+      ]
+    },
+    {
+      "id": "getting-stuck",
+      "title": "Getting Stuck",
+      "items": [
+        {
+          "question": "How quickly can help arrive if I'm stuck?",
+          "answer": "During the selection process, you will be able to see the estimated time of arrival for all available providers. Response times vary by location, time of day, and provider availability. Our network strives to ensure timely assistance for all situations."
+        },
+        {
+          "question": "What information do I need to provide when my vehicle is stuck?",
+          "answer": "When your vehicle is stuck, provide detailed information in your request for quotes about your location, the type of terrain, and any obstacles that may be in the way. This helps the service provider prepare the appropriate equipment and approach."
+        },
+        {
+          "question": "Can I request assistance if I'm stuck in a parking garage with height restrictions?",
+          "answer": "Yes, specify the parking garage's height restrictions when requesting service. Our network includes providers with specialized equipment designed to operate in environments with height restrictions, ensuring they can assist you regardless of your vehicle's location."
+        },
+        {
+          "question": "What's the difference between winching and towing services?",
+          "answer": "Winching services are used to pull vehicles out of a situation where they're stuck, such as in mud, snow, or a ditch, using a motorized drum and cable. Towing involves transporting a vehicle from one location to another on a tow truck or flatbed. Specify your needs when requesting assistance to ensure the right service is provided."
+        }
+      ]
+    },
+    {
+      "id": "locked-out-of-car",
+      "title": "Locked-out-of-Car",
+      "items": [
+        {
+          "question": "What should I do if I'm locked out of my car?",
+          "answer": "Submit your service request info to a provider in the Curbside SOS network, providing your location and vehicle details. A skilled technician will be dispatched to safely unlock your vehicle without damaging it."
+        }
+      ]
+    },
+    {
+      "id": "roadside-safety",
+      "title": "Roadside Safety",
+      "items": [
+        {
+          "question": "How can I stay safe if my vehicle breaks down at night?",
+          "answer": "Turn on your hazard lights immediately to make your vehicle more visible. Stay inside your vehicle with the doors locked if you're in an unfamiliar or unsafe area. Request a quote for assistance from our network of providers, and wait for help in a well-lit area if possible. Contact 911 if you are in an unsafe area."
+        },
+        {
+          "question": "What are the best practices for roadside safety while waiting for assistance?",
+          "answer": "If your vehicle breaks down, move it off the road if you can, and turn on your hazard lights to alert other drivers. For your safety, stay inside your vehicle with the doors locked. Place emergency signs, safety triangles, or flares around your vehicle to increase visibility. Keep your phone nearby to stay in contact with roadside assistance. Remember, your safety is the most important thing."
+        },
+        {
+          "question": "What additional safety equipment do you recommend having in my vehicle?",
+          "answer": "We recommend keeping a roadside emergency kit in your vehicle, which should include reflective safety triangles, a flashlight with extra batteries, a first aid kit, a water bottle, non-perishable snacks, and a warm blanket. These items can provide comfort and enhance your safety while waiting for assistance."
+        },
+        {
+          "question": "How can I ensure my safety when accepting help from a roadside assistance provider?",
+          "answer": "For your safety, ensure the provider is clearly identified with company branding on their vehicle and uniform. Feel free to ask for identification or confirmation of the service request details before allowing any work to begin."
+        },
+        {
+          "question": "What should I do if I feel unsafe while waiting for roadside assistance?",
+          "answer": "If you feel unsafe, stay inside your locked vehicle and keep the windows up. You can also contact local authorities to inform them of your situation and location. Always trust your instincts and take steps to maintain your safety."
+        },
+        {
+          "question": "How do I make my vehicle more visible if I break down at night?",
+          "answer": "Place reflective triangles or safety markers behind your vehicle, if you have them, to alert oncoming traffic. Always stay inside your vehicle if you're on a busy road."
+        },
+        {
+          "question": "What should I do if I encounter a breakdown in an unsafe location?",
+          "answer": "If you breakdown in an unsafe location, lock your doors and stay inside your vehicle. If necessary, dial emergency services for immediate assistance. Safety should be your top priority."
+        },
+        {
+          "question": "Can roadside assistance providers offer safety advice if I'm unsure about my situation?",
+          "answer": "Yes, our network providers are not only equipped to handle your vehicle issues but can also offer safety advice tailored to your specific situation. When you submit a request for a job, describe your concerns, and they will guide you on how to stay safe while waiting for help."
+        }
+      ]
+    },
+    {
+      "id": "tire-issues",
+      "title": "Tire Issues",
+      "items": [
+        {
+          "question": "Can your network providers help with a flat tire?",
+          "answer": "Yes, our network includes providers that offer tire change services. If you have a spare tire, a service provider can replace your flat tire on the spot. If you do not have a spare, you should submit a request for a tow to the nearest service center of your choosing."
+        },
+        {
+          "question": "What if I don't know how to change a tire?",
+          "answer": "No problem. Our network providers are fully equipped to change tires. Simply request assistance through our platform, and you can select a provider in our network after submitting your job details to help you with your tire issue."
+        },
+        {
+          "question": "Is it safe to drive on a spare tire, and for how long?",
+          "answer": "Driving on a spare tire is intended as a temporary solution to get you to a safe location or a service center for a permanent fix. Spare tires, especially \"donut\" spares, have limitations on speed and distance, typically not exceeding 50 miles per hour and 50\u201170 miles in distance, and they have \"for temporary use only\" stamped on the tire. Always refer to your vehicle's owner manual for specific recommendations and replace the spare with a full-size tire as soon as possible."
+        }
+      ]
+    },
+    {
+      "id": "preparing-for-assistance",
+      "title": "Preparing for Assistance",
+      "items": [
+        {
+          "question": "How does Curbside SOS work?",
+          "answer": "Curbside SOS is an open marketplace for motorists who require roadside assistance & towing help but don't want all of the costs & complications that come with road club memberships. We connect motorists in need with emergency assistance professionals to allow them to directly quote how much they would charge for the job in real time with more transparency and tracking than alternatives, getting you back on the road as quickly as possible for less than you'd think."
+        },
+        {
+          "question": "How should I prepare for a roadside assistance provider's arrival?",
+          "answer": "Ensure your vehicle is in a safe location. If possible, provide specific details about your vehicle's make, model, and color when you request assistance. Gather any necessary personal belongings in case your vehicle needs to be towed. Keep your mobile phone charged and within reach."
+        },
+        {
+          "question": "What information should I provide when requesting roadside assistance?",
+          "answer": "Through the Curbside SOS platform, provide your location, using GPS coordinates if available, details about the issue you're experiencing, your vehicle type, and any relevant membership or insurance information that may assist with service coordination."
+        },
+        {
+          "question": "Is there anything I should avoid doing while waiting for roadside assistance?",
+          "answer": "Avoid attempting to fix the issue yourself if you're not knowledgeable or equipped to do so, as this can sometimes lead to further damage or personal injury. Stay safely with your vehicle and wait for the professional assistance you've requested."
+        },
+        {
+          "question": "What details are crucial for a faster response from a roadside assistance provider?",
+          "answer": "For a faster response, provide the following details: your exact location (use GPS coordinates if possible), vehicle make and model, nature of the issue, and any specific instructions or safety concerns. This information is all requested during the process with Curbside SOS and helps providers prepare adequately and reach you more efficiently."
+        },
+        {
+          "question": "What should I do if the towing provider from your network hasn't arrived in the expected timeframe?",
+          "answer": "If the towing provider has not arrived within the expected timeframe, contact them directly using the contact information provided after selecting a service provider. Our network aims for timely assistance, but delays can occur due to traffic or unforeseen circumstances. If you're unable to reach them or need further assistance, please contact our customer support for additional help."
+        },
+        {
+          "question": "Can I choose a specific destination for my towed vehicle?",
+          "answer": "Yes, you can specify a preferred destination for your towed vehicle, whether it's your home, a repair shop, or another location. Please include this information when you make the request. Be aware that towing beyond a certain distance may incur additional charges."
+        }
+      ]
+    },
+    {
+      "id": "about-curbside-sos",
+      "title": "About Curbside SOS",
+      "items": [
+        {
+          "question": "What is Curbside SOS?",
+          "answer": "Curbside SOS is an open marketplace for motorists who require roadside assistance & towing help but don't want all of the costs & complications that come with road club memberships. We connect motorists in need with emergency assistance professionals to allow them to directly quote how much they would charge for the job in real time with more transparency and tracking than alternatives, getting you back on the road as quickly as possible, for less than you'd think."
+        }
+      ]
+    }
+  ]
+}
+

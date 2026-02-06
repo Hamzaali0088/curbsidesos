@@ -1,0 +1,146 @@
+{
+  "title": "Roadside Assistance Glossary",
+  "entries": [
+    {
+      "term": "Battery Terminal",
+      "description": "The positive and negative connection points on a battery where cables are attached to provide power to a vehicle."
+    },
+    {
+      "term": "Breakdown Lane",
+      "description": "The part of a highway or road designated for vehicles that have broken down to pull over safely."
+    },
+    {
+      "term": "Cold Cranking Amps (CCA)",
+      "description": "A measurement of a battery's ability to start an engine in cold temperatures, critical for assessing battery performance."
+    },
+    {
+      "term": "Diagnostic Scan Tool",
+      "description": "A device used by mechanics to read and interpret codes from a vehicle's computer system, identifying mechanical or electrical problems."
+    },
+    {
+      "term": "Diagnostic Service",
+      "description": "Checking a vehicle to identify the cause of a malfunction or failure."
+    },
+    {
+      "term": "Dolly",
+      "description": "A trailer with two wheels used to tow a vehicle by lifting its front or rear wheels off the ground. These can also be found on tow trucks to keep all wheels off the ground."
+    },
+    {
+      "term": "Emergency Fuel Delivery",
+      "description": "Providing a small amount of fuel to a vehicle that has run out of gas."
+    },
+    {
+      "term": "Emergency Road Service (ERS)",
+      "description": "Another term for roadside assistance, focusing on emergency situations."
+    },
+    {
+      "term": "Emergency Stop Signal (ESS)",
+      "description": "A vehicle safety feature that automatically flashes the hazard lights during sudden braking to warn other drivers. Not all vehicles have this feature, and if equipped, the feature only occurs on the third brake light."
+    },
+    {
+      "term": "Flatbed Tow Truck",
+      "description": "A tow truck with a flat platform that can transport vehicles without their wheels touching the ground. This is also referred to as a \"rollback.\""
+    },
+    {
+      "term": "Fuel Delivery Service",
+      "description": "Providing a small amount of fuel to a vehicle that has run out, enough to reach the nearest gas station."
+    },
+    {
+      "term": "Full-Service Roadside Assistance",
+      "description": "Comprehensive roadside help that includes towing, battery services, tire changes, lock-out assistance, and more."
+    },
+    {
+      "term": "Gross Vehicle Weight Rating (GVWR)",
+      "description": "The maximum weight that a vehicle or tow truck can safely carry or tow."
+    },
+    {
+      "term": "Hazard Lights",
+      "description": "Flashing lights on a vehicle used to warn other drivers of a hazard or breakdown, including 4-way flashers."
+    },
+    {
+      "term": "Jump Box",
+      "description": "A portable battery used for jump-starting vehicles."
+    },
+    {
+      "term": "Jump Lead",
+      "description": "Another term for jumper cables, used to connect two batteries for a jump-start."
+    },
+    {
+      "term": "Jump-Start",
+      "description": "Starting a vehicle by using another vehicle's battery or a portable battery booster."
+    },
+    {
+      "term": "Key Retrieval",
+      "description": "The process of retrieving keys locked inside a vehicle, often involving lock-picking or other locksmith techniques."
+    },
+    {
+      "term": "Lock-Out Service",
+      "description": "Assistance provided to gain entry into a vehicle when the keys are lost or locked inside."
+    },
+    {
+      "term": "Lockout Tools",
+      "description": "Specialized tools used by service providers to unlock vehicles without causing damage."
+    },
+    {
+      "term": "Mileage Charge",
+      "description": "A fee based on the distance a tow truck or service vehicle travels to assist a customer."
+    },
+    {
+      "term": "Mobile Battery Service",
+      "description": "Roadside assistance service that could include testing, jump-starting, or replacing a vehicle's battery on location."
+    },
+    {
+      "term": "On-Demand Roadside Assistance",
+      "description": "Roadside help requested as needed, without requiring a membership or subscription."
+    },
+    {
+      "term": "Recovery Strap",
+      "description": "A strap used to help pull a vehicle out of a situation where it's stuck."
+    },
+    {
+      "term": "Service Dispatch",
+      "description": "The process of sending out a service provider to assist a customer following a service call."
+    },
+    {
+      "term": "Tire Inflation Kit",
+      "description": "A portable device used to inflate a tire with air, often including sealant for temporary puncture repairs."
+    },
+    {
+      "term": "Tire Pressure Monitoring System (TPMS)",
+      "description": "A system that monitors the air pressure inside the tires and alerts the driver when it becomes too low or high."
+    },
+    {
+      "term": "Tire Pressure",
+      "description": "The amount of air in a vehicle's tires, measured in pounds per square inch (PSI)."
+    },
+    {
+      "term": "Tire Rotation",
+      "description": "A service that involves changing the positions of a vehicle's tires to promote even wear and extend their lifespan."
+    },
+    {
+      "term": "Tow Dolly",
+      "description": "A two-wheeled trailer used to tow a vehicle with its front wheels off the ground and rear wheels on the ground. Only front-wheel drive vehicles can be placed on these dollies."
+    },
+    {
+      "term": "Tow Hook",
+      "description": "A hook used for attaching a vehicle to a tow truck."
+    },
+    {
+      "term": "Wheel-Lift Towing",
+      "description": "Towing method where the vehicle's front or rear wheels are lifted while the other set remains on the ground. Typically referred to as a \"wrecker.\""
+    },
+    {
+      "term": "Winching",
+      "description": "Using a motorized cable to pull a vehicle out of a place where it's stuck."
+    },
+    {
+      "term": "Winch-Out Services",
+      "description": "Services to pull a vehicle from mud, snow, ditches, or other places where it's stuck."
+    },
+    {
+      "term": "About Curbside SOS",
+      "description": "Curbside SOS is an open marketplace for motorists who require roadside assistance & towing help but don't want all of the costs & complications that come with road club memberships. We connect motorists in need with emergency assistance professionals to allow them to directly quote how much they would charge for the job in real time with more transparency and tracking than alternatives, getting you back on the road as quickly as possible, for less than you'd think."
+    }
+  ]
+}
+
