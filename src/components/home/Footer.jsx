@@ -42,7 +42,7 @@ export default function Footer() {
 
   const classNameofLink = "text-lg text-[#4D6C7D] leading-5.5 hover:text-primary"
   return (
-    <footer className="bg-gray-100 text-gray-800">
+    <footer className="bg-[#FAFAFA] text-gray-800">
       <Container className="py-5">
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-1"> 

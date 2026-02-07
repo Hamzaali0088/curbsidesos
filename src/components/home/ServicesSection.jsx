@@ -15,21 +15,21 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="bg-white py-16 lg:py-24 max-w-3xl mx-auto">
-      <Container>
+    <section className="bg-[#FAFAFA] ">
+      <Container className="py-16 lg:py-24 max-w-3xl mx-auto">
         <div className="text-center">
-          <Heading2>
+          <Heading2 className="">
             We&apos;ll get you back on the road
           </Heading2>
-          < Paragraph className="">
+          < Paragraph className="py-4">
             Stranded? Need a tow? Locked out? If you&apos;ve got a problem, we
             can help.
           </Paragraph>
-          <p className="mt-4 text-gray-900 font-bold">
+          <p className=" text-gray-900 font-bold">
             <span className="mr-1">🇺🇸</span> 1,300+ providers in all 50 states
           </p>
         </div>
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-2 gap-12 sm:grid-cols-3 sm:gap-16">
+        <div className="mx-auto mt-10 grid max-w-xl grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-8">
           {services.map(({ id, name, image }) => (
             <Link
               key={id}
@@ -42,7 +42,7 @@ export default function ServicesSection() {
                 size="lg"
                 className="border-[3px]"
               />
-              <span className="mt-4 text-base border border-primary px-4 py-2 rounded-lg  font-semibold uppercase tracking-wide text-primary">
+              <span className="mt-4 text-sm border border-primary px-4 py-2 rounded-lg  font-light uppercase tracking-wide text-primary">
                 {name}
               </span>
             </Link>

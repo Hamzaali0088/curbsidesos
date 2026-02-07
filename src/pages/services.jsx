@@ -123,8 +123,8 @@
                       <h2 className="text-4xl font-bold text-gray-900">
                             {service.name}
                           </h2>
-                      <div className="flex flex-row gap-0 ">
-                        <div className="min-w-[40%] flex justify-center items-end">
+                      <div className="flex flex-col  md:flex-row ">
+                        <div className="min-w-[40%] flex justify-center items-end ">
                           <Image
                             src={imageSrc}
                             alt={content.caption || service.name}
@@ -133,7 +133,7 @@
                             className="w-full h-auto"
                           />
                         </div>
-                        <div className="flex flex-col justify-center px-6 ">
+                        <div className="flex flex-col justify-center md:px-6 px-0">
                           
                           <p className="text-base leading-tight text-gray-700">
                             {content.description}

@@ -1,12 +1,13 @@
 import { forwardRef } from "react";
 import Link from "next/link";
 import Container from "@/components/common/Container";
+import Paragraph from "../common/Paragraph";
 
 const HeroSection = forwardRef(function HeroSection(_, ref) {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden max-h-[500px] bg-white py-8 md:py-20 lg:py-28"
+      className="relative overflow-hidden max-h-[500px] bg-white py-8 md:py-20 lg:py-23"
     >
       {/* Hero background from public/st-images/background (SVG built from path) */}
       <div
@@ -17,16 +18,16 @@ const HeroSection = forwardRef(function HeroSection(_, ref) {
       />
       <Container className="relative">
         <div className="mx-auto max-w-xl text-center">
-          <h1 className="text-[40px] font-bold leading-tight tracking-tight text-gray-900 sm:text-5xl lg:text-[54px]">
+          <h1 className="text-[40px] font-medium  text-gray-900 sm:text-5xl lg:text-[58px]">
             Reliable roadside 
             <span className="relative inline-block">
               <span>assistance—fast</span>
             </span>
           </h1>
-          <p className="mt-6 text-lg text-gray-600 sm:text-xl">
+          <Paragraph className="mt-6 max-w-sm mx-auto">
             Get quotes with ETAs from local insured providers—in three minutes or
             less.
-          </p>
+          </Paragraph>
           <div className="mt-10">
             <Link
               href="/rescue"

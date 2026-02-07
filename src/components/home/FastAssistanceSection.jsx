@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Container from "@/components/common/Container";
+import Heading2 from "../common/Heading2";
 
 const steps = [
   {
@@ -24,7 +25,7 @@ const steps = [
 
 export default function FastAssistanceSection() {
   return (
-    <section className="bg-slate-100 py-16 lg:py-24">
+    <section className="bg-[#FAFAFA] py-16 lg:py-24">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
@@ -36,9 +37,9 @@ export default function FastAssistanceSection() {
             />
           </div>
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <Heading2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Fast, trustworthy assistance
-            </h2>
+            </Heading2>
             <p className="mt-4 text-lg text-gray-600">
               With Curbside SOS, you&apos;re never stuck for long.
             </p>

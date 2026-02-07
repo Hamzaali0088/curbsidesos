@@ -146,7 +146,7 @@ export default function Header({ contactNumber }) {
               key={href}
               href={href}
               onClick={closeMenu}
-              className={`px-4 py-0 ${index === 4 || index === 7 || index === 9 ? "pt-4" : "pt-0"} text-left text-base font-semibold ${router.pathname === href
+              className={`px-4 py-0.5 ${index === 4 || index === 7 || index === 9 ? "pt-4" : "pt-0"} text-left text-base font-light ${router.pathname === href
                   ? "text-primary"
                   : "text-gray-900 hover:text-primary"
                 }`}
