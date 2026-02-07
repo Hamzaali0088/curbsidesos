@@ -20,9 +20,12 @@ const sideMenuLinks = [
   { label: "Privacy Policy", href: "/privacy", index: 10 },
 ];
 
+const APP_STORE_URL = "https://apps.apple.com/us/app/curbside-sos/id1480296390";
+const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.koombea.curbsidesos&hl=en_US";
+
 const downloadLinks = [
-  { label: "iOS", href: "/download/ios" },
-  { label: "Android", href: "/download/android" },
+  { label: "iOS", href: APP_STORE_URL, external: true },
+  { label: "Android", href: GOOGLE_PLAY_URL, external: true },
 ];
 
 export default function Header({ contactNumber }) {
@@ -35,7 +38,7 @@ export default function Header({ contactNumber }) {
     <>
       <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
         <Container>
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex h-14 md:h-16 items-center justify-between">
             <div className="flex items-center gap-4">
 
               <div>
@@ -57,7 +60,7 @@ export default function Header({ contactNumber }) {
                       className="rounded p-2 text-gray-600 hover:bg-gray-100"
                       aria-label="Open menu"
                     >
-                      <Menu className="h-6 w-6" />
+                      <Menu className="h-5 w-5 md:h-6 md:w-6" />
                     </button>
 
                     <Link href="/" className="flex items-center">
@@ -66,7 +69,7 @@ export default function Header({ contactNumber }) {
                         alt="Curbside SOS"
                         width={160}
                         height={40}
-                        className="h-[45px] w-auto object-contain"
+                        className="h-7 md:h-[45px] w-auto object-contain"
                       />
                     </Link>
                   </div>
@@ -76,7 +79,7 @@ export default function Header({ contactNumber }) {
               </div>
 
             </div>
-            <nav className="hidden text-primary font-bold items-center gap-8 lg:flex">
+            <nav className=" text-primary font-bold items-center gap-4 md:gap-8 flex">
               {contactNumber ? (
                 <div className="flex items-center gap-2 text-black">
                   <Phone className="h-4 w-4" />
@@ -86,7 +89,7 @@ export default function Header({ contactNumber }) {
                 <>
                   <Link
                     href="/support"
-                    className="text-sm hover:text-secondary"
+                    className="text-sm hover:text-secondary hidden md:block"
                   >
                     SUPPORT
                   </Link>
@@ -153,16 +156,29 @@ export default function Header({ contactNumber }) {
           ))}
           <div className="mt-4 border-t border-gray-200 px-4 pt-4">
             <p className="text-sm font-bold text-[#4d6c7d]">Downloads</p>
-            {downloadLinks.map(({ label, href }) => (
-              <Link
-                key={href}
-                href={href}
-                onClick={closeMenu}
-                className="block py-0.5 px-4 text-base font-semibold text-gray-900 hover:text-primary"
-              >
-                {label}
-              </Link>
-            ))}
+            {downloadLinks.map(({ label, href, external }) =>
+              external ? (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                  className="block py-0.5 px-4 text-base font-semibold text-gray-900 hover:text-primary"
+                >
+                  {label}
+                </a>
+              ) : (
+                <Link
+                  key={label}
+                  href={href}
+                  onClick={closeMenu}
+                  className="block py-0.5 px-4 text-base font-semibold text-gray-900 hover:text-primary"
+                >
+                  {label}
+                </Link>
+              )
+            )}
           </div>
         </nav>
       </aside>

@@ -3,6 +3,7 @@ import Header from "@/components/home/Header";
 import Footer from "@/components/home/Footer";
 import InnerPageLayout from "@/components/common/InnerPageLayout";
 import glossaryData from "@/data/glossary.json";
+import Paragraph from "@/components/common/Paragraph";
 
 export default function GlossaryPage() {
   const { title, entries } = glossaryData;
@@ -28,14 +29,14 @@ export default function GlossaryPage() {
               {entries.map(({ term, description }) => (
                 <div
                   key={term}
-                  className="border-b border-gray-200 pb-4 last:border-b-0"
+                  className="pb-4"
                 >
-                  <dt className="text-base font-semibold text-gray-900">
+                  <dt className="text-xl md:text-2xl lg:text-3xl   font-semibold text-gray-900">
                     {term}
                   </dt>
-                  <dd className="mt-1 text-sm leading-relaxed text-gray-700">
+                  <Paragraph className="">
                     {description}
-                  </dd>
+                  </Paragraph>
                 </div>
               ))}
             </dl>

@@ -159,7 +159,7 @@ export default function GetSupport() {
 
         {/* Location Modal */}
         {modalServiceId && (
-          <>
+          <div className="">
             <div
               role="button"
               tabIndex={0}
@@ -169,7 +169,7 @@ export default function GetSupport() {
               aria-label="Close modal"
             />
             <div
-              className="fixed left-1/2 top-1/2 z-[70] w-full max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-8 shadow-2xl"
+              className="fixed left-1/2   top-1/2 z-[70] w-full max-w-[350px] md:max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-8 shadow-2xl"
               role="dialog"
               aria-modal="true"
               aria-labelledby="modal-title"
@@ -188,7 +188,7 @@ export default function GetSupport() {
 
               <h2
                 id="modal-title"
-                className="text-start text-xl pb-4 font-bold text-gray-900 sm:text-2xl"
+                className="text-start text-2xl pb-4 font-bold text-gray-900 "
               >
                 We can help you with a {getServiceById(modalServiceId).name}
               </h2>
@@ -204,7 +204,7 @@ export default function GetSupport() {
                 <button
                   type="button"
                   onClick={closeModal}
-                  className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 font-bold uppercase tracking-wide text-white transition-colors hover:bg-secondary"
+                  className="flex w-full items-center justify-center gap-2 text-sm md:text-base rounded-lg bg-primary px-4 py-3 font-bold uppercase tracking-wide text-white transition-colors hover:bg-secondary"
                 >
                   <Send className="h-5 w-5" />
                   Allow Current Location
@@ -218,7 +218,7 @@ export default function GetSupport() {
                 </button>
               </div>
             </div>
-          </>
+          </div>
         )}
       </div>
     </>

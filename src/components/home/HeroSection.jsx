@@ -1,9 +1,13 @@
+import { forwardRef } from "react";
 import Link from "next/link";
 import Container from "@/components/common/Container";
 
-export default function HeroSection() {
+const HeroSection = forwardRef(function HeroSection(_, ref) {
   return (
-    <section className="relative overflow-hidden max-h-[500px] bg-white py-20 lg:py-28">
+    <section
+      ref={ref}
+      className="relative overflow-hidden max-h-[500px] bg-white py-8 md:py-20 lg:py-28"
+    >
       {/* Hero background from public/st-images/background (SVG built from path) */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.02]"
@@ -13,7 +17,7 @@ export default function HeroSection() {
       />
       <Container className="relative">
         <div className="mx-auto max-w-xl text-center">
-          <h1 className="text-[32px] font-bold leading-tight tracking-tight text-gray-900 sm:text-5xl lg:text-[54px]">
+          <h1 className="text-[40px] font-bold leading-tight tracking-tight text-gray-900 sm:text-5xl lg:text-[54px]">
             Reliable roadside 
             <span className="relative inline-block">
               <span>assistance—fast</span>
@@ -38,4 +42,6 @@ export default function HeroSection() {
       </Container>
     </section>
   );
-}
+});
+
+export default HeroSection;

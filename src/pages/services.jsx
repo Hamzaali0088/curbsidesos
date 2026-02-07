@@ -139,7 +139,7 @@
                             {content.description}
                           </p>
                           <Link
-                            href={`/get-support?service=${service.id}`}
+                            href={`/services/${service.id}`}
                             className="mt-6 inline-flex uppercase w-fit items-center gap-1 text-sm font-semibold text-primary hover:text-secondary"
                           >
                             {content.buttonLabel}

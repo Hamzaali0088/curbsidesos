@@ -1,5 +1,6 @@
 export { default as Header } from "./Header";
 export { default as HeroSection } from "./HeroSection";
+export { default as MobileBottomDropup } from "./MobileBottomDropup";
 export { default as ServicesSection } from "./ServicesSection";
 export { default as TestimonialsSection } from "./TestimonialsSection";
 export { default as FastAssistanceSection } from "./FastAssistanceSection";

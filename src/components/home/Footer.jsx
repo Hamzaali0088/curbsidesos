@@ -5,34 +5,37 @@ import Container from "@/components/common/Container";
 import Paragraph from "../common/Paragraph";
 
 const partnerLinks = [
-  { label: "Roadside providers", href: "/providers" },
-  { label: "Police Dispatch", href: "/police-dispatch" },
+  { label: "Roadside providers", href: "/service-providers" },
+  { label: "Police Dispatch", href: "/911" },
   { label: "Motorists", href: "/motorists" },
 ];
 
 const supportLinks = [
   { label: "Contact us", href: "/contact" },
-  { label: "Knowledge Base", href: "/knowledge-base" },
+  { label: "Knowledge Base", href: "/faqs" },
 ];
 
+const APP_STORE_URL = "https://apps.apple.com/us/app/curbside-sos/id1480296390";
+const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.koombea.curbsidesos&hl=en_US";
+
 const downloadLinks = [
-  { label: "iOS", href: "/download/ios" },
-  { label: "Android", href: "/download/android" },
+  { label: "iOS", href: APP_STORE_URL, external: true },
+  { label: "Android", href: GOOGLE_PLAY_URL, external: true },
 ];
 
 const roadsideLinks = [
-  { label: "Roadside Help & FAQs", href: "/help" },
+  { label: "Roadside Help & FAQs", href: "/faqs" },
   { label: "Glossary", href: "/glossary" },
   { label: "All Roadside Services", href: "/services" },
 ];
 
 const serviceList = [
-  "Flat tire",
-  "Won't start",
-  "Locked out",
-  "Out of gas",
-  "Basic tow",
-  "Stuck",
+  { label: "Flat tire", href: "/get-support?service=flat-tire" },
+  { label: "Won't start", href: "/get-support?service=wont-start" },
+  { label: "Locked out", href: "/get-support?service=locked-out" },
+  { label: "Out of gas", href: "/get-support?service=out-of-gas" },
+  { label: "Basic tow", href: "/get-support?service=basic-tow" },
+  { label: "Stuck", href: "/get-support?service=winch-out" },
 ];
 
 export default function Footer() {
@@ -111,14 +114,25 @@ export default function Footer() {
             </ul>
             <h3 className="mt-6 font-bold text-gray-900">Downloads</h3>
             <ul className="mt-4 space-y-2">
-              {downloadLinks.map(({ label, href }) => (
+              {downloadLinks.map(({ label, href, external }) => (
                 <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-sm text-gray-700 hover:text-primary hover:underline"
-                  >
-                    {label}
-                  </Link>
+                  {external ? (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-gray-700 hover:text-primary hover:underline"
+                    >
+                      {label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={href}
+                      className="text-sm text-gray-700 hover:text-primary hover:underline"
+                    >
+                      {label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -138,8 +152,15 @@ export default function Footer() {
               ))}
             </ul>
             <ul className="mt-3 space-y-1 pl-0 text-sm text-gray-700">
-              {serviceList.map((service) => (
-                <li key={service}>{service}</li>
+              {serviceList.map(({ label, href }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="hover:text-primary hover:underline"
+                  >
+                    {label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>

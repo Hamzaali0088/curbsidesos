@@ -87,12 +87,16 @@ function HelpNowCard() {
  *
  * Props:
  * - breadcrumbLabel: string - label for the current page in the breadcrumb.
+ * - breadcrumbMiddle: string - optional middle segment (e.g. "services"); when set, links to /services and shows three segments.
  * - rightCardVariant: "contact" | "help" - which right card design to use.
+ * - rightContent: ReactNode - optional custom right sidebar (overrides rightCardVariant when set).
  * - children: ReactNode - main page content rendered on the left.
  */
 export default function InnerPageLayout({
   breadcrumbLabel,
+  breadcrumbMiddle,
   rightCardVariant = "contact",
+  rightContent,
   children,
 }) {
   return (
@@ -101,15 +105,27 @@ export default function InnerPageLayout({
         <Link href="/" className="hover:text-primary">
           Roadside Assistance
         </Link>
+        {breadcrumbMiddle != null && (
+          <>
+            <span className="mx-2">/</span>
+            <Link href="/services" className="hover:text-primary">
+              {breadcrumbMiddle}
+            </Link>
+          </>
+        )}
         <span className="mx-2">/</span>
         <span className="text-gray-900">{breadcrumbLabel}</span>
       </nav>
 
-      <div className="grid grid-cols-[0.73fr_0.27fr] gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-[0.73fr_0.27fr] gap-10">
         <div className="">{children}</div>
         <div className="">
           <div className="sticky top-24">
-            {rightCardVariant === "help" ? <HelpNowCard /> : <ContactInfoCard />}
+            {rightContent != null
+              ? rightContent
+              : rightCardVariant === "help"
+                ? <HelpNowCard />
+                : <ContactInfoCard />}
           </div>
         </div>
       </div>

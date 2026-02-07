@@ -27,7 +27,7 @@ export default function ProviderCTASection() {
             </Paragraph>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
               <a
-                href="#"
+                href="https://apps.apple.com/us/app/curbside-sos/id1480296390"
                 className="inline-block transition-opacity hover:opacity-90"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -38,11 +38,11 @@ export default function ProviderCTASection() {
                   alt="Download on the App Store"
                   width={160}
                   height={52}
-                  className="h-12 w-auto object-contain"
+                  className="h-10 md:h-12 w-auto object-contain"
                 />
               </a>
               <a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.koombea.curbsidesos&hl=en_US"
                 className="inline-block transition-opacity hover:opacity-90"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -53,7 +53,7 @@ export default function ProviderCTASection() {
                   alt="Get it on Google Play"
                   width={160}
                   height={52}
-                  className="h-12 w-auto object-contain"
+                  className="h-10 md:h-12 w-auto object-contain"
                 />
               </a>
             </div>

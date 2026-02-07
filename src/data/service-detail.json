@@ -1,0 +1,152 @@
+{
+  "aboutCurbsideSos": {
+    "title": "About Curbside SOS",
+    "description": "Curbside SOS is an open marketplace for motorists who require roadside assistance & towing help but don't want all of the costs & complications that come with road club memberships. We connect motorists in need with emergency assistance professionals to allow them to directly quote how much they would charge for the job in real time with more transparency and tracking than alternatives, getting you back on the road as quickly as possible, for less than you'd think."
+  },
+  "emergencyResources": [
+    { "serviceId": "out-of-gas", "title": "Out of Gas - Fuel Delivery", "description": "If you are stuck and out of gas, here are some considerations for fuel delivery to help get you back on the road." },
+    { "serviceId": "locked-out", "title": "Lockout and Lost Keys", "description": "If you are locked out of your car or vehicle, Curbside SOS can connect you to the nearest provider to help get you moving again. Read this quick guide to learn more about lock-out solutions with Curbside SOS providers." },
+    { "serviceId": "basic-tow", "title": "Towing Services", "description": "Curbside SOS roadside assistance providers offer various types of towing services for cars, trucks, motorcycles, and more." },
+    { "serviceId": "safety-tips", "title": "Emergency Roadside Safety Tips", "description": "While you are waiting for your roadside assistance to arrive, stay safe by reading this quick guide on roadside safety and precautions for motorists." },
+    { "serviceId": "wont-start", "title": "Auto Jumpstart and Battery", "description": "We know you have places to go, and dealing with a dead battery was not on your to-do list today. Find out more about how Curbside SOS can help connect you with a battery service provider right now." },
+    { "serviceId": "flat-tire", "title": "Flat Tire Repair and Replacement", "description": "Your Curbside SOS tire service provider will help replace your tire or throw on a spare." }
+  ],
+  "services": {
+    "flat-tire": {
+      "id": "flat-tire",
+      "name": "Flat tire",
+      "title": "A Guide to Flat Tire Issues and Roadside Assistance",
+      "heroImage": "/st-images/bring_equipment/flat-tire.png",
+      "intro": [
+        "This guide helps you understand common flat tire causes, how to stay safe when a tire fails, and when to call for roadside assistance. Whether you have a slow leak, a puncture, or a blowout, knowing what to do can keep you and your passengers safe.",
+        "Curbside SOS connects you with local technicians who can change your flat, bring a spare, or arrange a tow—so you can get back on the road quickly."
+      ],
+      "sections": [
+        {
+          "id": "understanding-wear",
+          "title": "Understanding Tire Wear and Tear",
+          "paragraphs": [
+            "Tires wear down over time from normal driving. Tread depth, age, and condition all affect how likely a tire is to fail. Regular inspections and proper inflation help extend tire life and reduce the risk of flats and blowouts."
+          ]
+        },
+        {
+          "id": "what-causes-flats",
+          "title": "What Causes Flat Tires and How to Handle One",
+          "paragraphs": [
+            "Common causes include punctures (nails, screws, glass), valve stem leaks, rim damage, and over- or under-inflation. If you get a flat, move to a safe place off the road if possible, turn on hazards, and only attempt a tire change if you have a spare and it is safe to do so. Otherwise, call for roadside assistance."
+          ]
+        },
+        {
+          "id": "recognizing-blowout",
+          "title": "Recognizing and Reacting to a Tire Blowout",
+          "paragraphs": [
+            "A blowout is a sudden loss of tire pressure, often with a loud noise. Keep a firm grip on the wheel, avoid braking hard, and ease off the accelerator. Steer straight and pull off the road when it is safe. Then call for help—driving on a flat is dangerous and can damage the wheel."
+          ]
+        },
+        {
+          "id": "tire-pressure",
+          "title": "Maintaining and Monitoring Tire Pressure",
+          "paragraphs": [
+            "Check tire pressure at least once a month and before long trips. Use the pressure listed on the driver's door jamb or in the manual. Under-inflated tires run hot and can fail; over-inflated tires wear unevenly and ride harshly. Proper pressure improves safety and fuel economy."
+          ]
+        },
+        {
+          "id": "seasonal-changes",
+          "title": "Seasonal Tire Changes and Challenges",
+          "paragraphs": [
+            "Cold weather can reduce tire pressure. Snow and ice increase the need for adequate tread and, in some regions, winter or all-weather tires. Seasonal rotation and inspection help ensure your tires are ready for the conditions you'll face."
+          ]
+        },
+        {
+          "id": "road-hazards",
+          "title": "Road Hazards and Tire Damage",
+          "paragraphs": [
+            "Potholes, debris, and curb impact can damage sidewalls or rims and lead to slow leaks or blowouts. Avoid hazards when safe to do so, and have tires inspected after a hard impact. If you notice vibration, pulling, or low pressure, get checked before driving far."
+          ]
+        },
+        {
+          "id": "when-to-call",
+          "title": "When to Get Roadside Assistance for Tire Issues",
+          "paragraphs": [
+            "Call for roadside assistance when you have no spare, multiple flats, or cannot change the tire safely (e.g., on a busy highway). Curbside SOS connects you with local providers who can bring a spare, repair the tire if possible, or tow you to a shop. Get quotes and ETAs so you can choose the option that works best for you."
+          ]
+        }
+      ]
+    },
+    "wont-start": {
+      "id": "wont-start",
+      "name": "Won't start",
+      "title": "A Guide to Battery and Jump Start Issues",
+      "heroImage": "/st-images/bring_equipment/won_t-start.png",
+      "intro": [
+        "When your vehicle won't start, the cause is often a dead or weak battery. This guide covers battery basics, jump-starting safely, and when to call for roadside assistance or a battery replacement.",
+        "Curbside SOS can connect you with providers who offer jump starts and, when needed, battery testing and replacement."
+      ],
+      "sections": [
+        { "id": "battery-basics", "title": "Understanding Your Vehicle Battery", "paragraphs": ["Batteries provide the power to start the engine and run electrical systems. Age, cold weather, and leaving lights or accessories on can drain or weaken a battery. Most batteries last 3–5 years; have yours tested if you notice slow cranking or repeated no-starts."] },
+        { "id": "jump-start", "title": "How to Jump Start Safely", "paragraphs": ["Use jumper cables and a donor vehicle or portable jump pack. Connect positive to positive, negative to a good ground on the dead vehicle (not the battery). Start the donor vehicle, then try starting the dead vehicle. If you're unsure or in an unsafe location, call for roadside assistance instead."] },
+        { "id": "when-to-call", "title": "When to Get Roadside Assistance", "paragraphs": ["Call for help when you have no jumper cables, no donor vehicle, or when a jump start doesn't work (possible alternator or other issue). Curbside SOS providers can jump start your vehicle or recommend a tow to a repair shop."] }
+      ]
+    },
+    "locked-out": {
+      "id": "locked-out",
+      "name": "Locked out",
+      "title": "A Guide to Car Lockouts and Key Retrieval",
+      "heroImage": "/st-images/bring_equipment/locked-out.png",
+      "intro": [
+        "Getting locked out of your car is frustrating but common. This guide covers prevention tips and what to do when you're locked out—including when to call for professional help.",
+        "Curbside SOS connects you with technicians who can help you get back into your vehicle without damaging locks or windows."
+      ],
+      "sections": [
+        { "id": "prevention", "title": "Preventing a Lockout", "paragraphs": ["Keep a spare key in a wallet, bag, or with a trusted person. Consider a magnetic key box or a spare in a safe spot. For keyless entry, know how to access the physical key and where the backup battery or key slot is."] },
+        { "id": "when-locked-out", "title": "What to Do When You're Locked Out", "paragraphs": ["Stay calm and in a safe place. Don't try to break a window unless it's an emergency (e.g., child or pet inside). Call a locksmith or roadside assistance. Curbside SOS providers can often open your vehicle quickly and without damage."] },
+        { "id": "when-to-call", "title": "When to Get Roadside Assistance", "paragraphs": ["Call for help when you don't have a spare key, when it's unsafe to wait, or when you need someone with the right tools. Get quotes and ETAs through Curbside SOS so you can choose a provider that fits your situation."] }
+      ]
+    },
+    "out-of-gas": {
+      "id": "out-of-gas",
+      "name": "Out of gas",
+      "title": "A Guide to Running Out of Fuel",
+      "heroImage": "/st-images/bring_equipment/out-fo-gas.webp",
+      "intro": [
+        "Running out of gas can leave you stranded and sometimes in a risky spot. This guide covers what to do when you run out, how to stay safe, and how to get fuel delivered quickly.",
+        "Curbside SOS can connect you with providers who deliver fuel so you can get to the nearest station."
+      ],
+      "sections": [
+        { "id": "when-you-run-out", "title": "What to Do When You Run Out of Gas", "paragraphs": ["Pull off the road as far as is safe, turn on hazards, and stay off the road when walking. If you have a gas can and are near a station, you can walk to get fuel—but only if it's safe and legal. Otherwise, call for fuel delivery."] },
+        { "id": "safety", "title": "Staying Safe While Waiting", "paragraphs": ["Stay in your vehicle when possible, or wait in a safe place away from traffic. Keep doors locked and be cautious of strangers. Use Curbside SOS to get an ETA so you know when help will arrive."] },
+        { "id": "when-to-call", "title": "When to Get Fuel Delivery", "paragraphs": ["Call for fuel delivery when you're out of gas and can't safely walk to a station, or when you'd rather have fuel brought to you. Curbside SOS providers can bring enough fuel to get you to the nearest gas station."] }
+      ]
+    },
+    "basic-tow": {
+      "id": "basic-tow",
+      "name": "Basic tow",
+      "title": "A Guide to Towing and Roadside Labor",
+      "heroImage": "/st-images/bring_equipment/basic-tow.png",
+      "intro": [
+        "When your vehicle can't be driven—due to a breakdown, accident, or mechanical failure—a tow may be the best option. This guide covers when to request a tow, what to expect, and how to choose a provider.",
+        "Curbside SOS lets you get quotes and ETAs from local tow operators so you can pick the option that works for you."
+      ],
+      "sections": [
+        { "id": "when-to-tow", "title": "When to Request a Tow", "paragraphs": ["Request a tow when the vehicle is unsafe or unable to be driven—e.g., major mechanical failure, accident damage, or no spare tire. In some cases, a mobile repair or jump start may be possible instead; describe your situation when requesting help."] },
+        { "id": "what-to-expect", "title": "What to Expect from Tow Service", "paragraphs": ["The provider will need your location, vehicle type, and where you want the vehicle taken. They'll give you an ETA and quote. Flatbed and wheel-lift are common; the right choice depends on your vehicle and situation."] },
+        { "id": "when-to-call", "title": "When to Get Roadside Assistance", "paragraphs": ["Use Curbside SOS to compare local tow providers by price and ETA. You can request a tow to a repair shop, your home, or another destination. Get help 24/7 from our network of providers."] }
+      ]
+    },
+    "winch-out": {
+      "id": "winch-out",
+      "name": "Winch out",
+      "title": "A Guide to Getting Unstuck and Vehicle Recovery",
+      "heroImage": "/st-images/bring_equipment/winch-out.png",
+      "intro": [
+        "Getting stuck in mud, snow, sand, or off the road can be stressful. This guide covers when you can try to free yourself and when to call for professional winch or recovery service.",
+        "Curbside SOS connects you with providers who have the equipment and experience to recover your vehicle safely."
+      ],
+      "sections": [
+        { "id": "when-stuck", "title": "When Your Vehicle Is Stuck", "paragraphs": ["If you're stuck, avoid spinning the wheels—it can dig you in deeper. Try rocking (forward/reverse gently) only if it's safe. In mud or snow, clearing around the tires or using traction aids may help. If you're not making progress, call for help."] },
+        { "id": "winch-recovery", "title": "Winch and Recovery Assistance", "paragraphs": ["Professional recovery uses winches, straps, and proper techniques to pull your vehicle to firm ground without causing more damage. Providers may need access and a clear path; describe your location and situation when requesting help."] },
+        { "id": "when-to-call", "title": "When to Get Roadside Assistance", "paragraphs": ["Call for recovery when you're stuck and can't get out safely on your own. Curbside SOS can connect you with local providers who offer winch-out and recovery. Get quotes and ETAs so you know when help will arrive."] }
+      ]
+    }
+  }
+}
