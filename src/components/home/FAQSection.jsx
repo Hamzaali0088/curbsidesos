@@ -46,7 +46,7 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
         className="flex w-full items-center justify-between py-2 text-left font-medium text-gray-900 transition-colors hover:text-primary"
         aria-expanded={isOpen}
       >
-        <span className="text-lg font-bold text-gray-900">{question}</span>
+        <span className="text-lg font-light text-gray-900">{question}</span>
         <ChevronDown
           className={`h-5 w-5 shrink-0 text-gray-500 transition-transform duration-500 ${
             isOpen ? "rotate-180" : ""
@@ -60,7 +60,7 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
       >
         <div className="min-h-0 overflow-hidden">
           <div className="pb-5 pr-8 text-gray-600">
-            <Paragraph>{answer}</Paragraph>
+            <p className="text-base font-normal  leading-5.5 text-[#4D6C7D] text-left">{answer}</p>
           </div>
         </div>
       </div>
