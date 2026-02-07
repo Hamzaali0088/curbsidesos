@@ -93,7 +93,7 @@ export default function FAQSection() {
           </div>
           <div className="mt-8 text-center">
             <a
-              href="/faq"
+              href="/faqs"
               className="text-sm font-medium text-gray-900 underline hover:text-primary"
             >
               SEE MORE

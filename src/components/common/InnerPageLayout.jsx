@@ -5,7 +5,7 @@ import Container from "@/components/common/Container";
 
 function ContactInfoCard() {
   return (
-    <div className="rounded-xl border border-gray-200 bg-gray-50 p-8 shadow-sm">
+    <div className="rounded-xl border-gray-200 bg-gray-50 p-8 shadow-sm">
       <div className="flex flex-col items-center text-center">
         <div className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-white ring-1 ring-gray-200">
           <Image
@@ -51,33 +51,32 @@ function ContactInfoCard() {
 
 function HelpNowCard() {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm">
+    <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 shadow-sm">
       <button
         type="button"
-        className="flex w-full items-center justify-center rounded-lg bg-primary px-4 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-secondary"
+        className="flex w-full items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-secondary"
       >
         Get help now
       </button>
-      <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-gray-700">
+      <p className="mt-3 text-xs uppercase text-center tracking-wide text-gray-700">
         AMEX, Discover, Master Card, Visa accepted
       </p>
       <div className="mt-5 space-y-3 text-sm text-gray-800">
-        <div className="flex items-start gap-3">
-          <Check className="mt-0.5 h-4 w-4 text-primary" />
-          <span>Providers are required to have insurance</span>
-        </div>
-        <div className="flex items-start gap-3">
-          <Check className="mt-0.5 h-4 w-4 text-primary" />
-          <span>Available in all 50 states, most requests quoted in 3 minutes</span>
-        </div>
-        <div className="flex items-start gap-3">
-          <Check className="mt-0.5 h-4 w-4 text-primary" />
-          <span>Choose the fastest or most affordable provider</span>
-        </div>
-        <div className="flex items-start gap-3">
-          <Check className="mt-0.5 h-4 w-4 text-primary" />
-          <span>Track your provider&apos;s ETA on the map</span>
-        </div>
+        {[
+          "Providers are required to have insurance",
+          "Available in all 50 states, most requests quoted in 3 minutes",
+          "Choose the fastest or most affordable ",
+          "Track your provider's ETA on map",
+        ].map((text) => (
+          <div key={text} className="flex items-start gap-2">
+            <Check
+              className="mt-0.5 h-4 min-w-4 shrink-0 text-black"
+              strokeWidth={2.5}
+              aria-hidden
+            />
+            <span className="font-medium">{text}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -97,7 +96,7 @@ export default function InnerPageLayout({
   children,
 }) {
   return (
-    <Container className="py-8">
+    <Container className="py-8 ">
       <nav className="mb-8 text-sm text-gray-500">
         <Link href="/" className="hover:text-primary">
           Roadside Assistance
@@ -106,9 +105,9 @@ export default function InnerPageLayout({
         <span className="text-gray-900">{breadcrumbLabel}</span>
       </nav>
 
-      <div className="grid gap-12 lg:grid-cols-3 lg:gap-16">
-        <div className="lg:col-span-2">{children}</div>
-        <div className="lg:col-span-1">
+      <div className="grid grid-cols-[0.73fr_0.27fr] gap-10">
+        <div className="">{children}</div>
+        <div className="">
           <div className="sticky top-24">
             {rightCardVariant === "help" ? <HelpNowCard /> : <ContactInfoCard />}
           </div>
