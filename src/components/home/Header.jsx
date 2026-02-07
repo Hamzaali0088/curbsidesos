@@ -7,17 +7,17 @@ import Container from "@/components/common/Container";
 import { Phone } from "lucide-react";
 
 const sideMenuLinks = [
-  { label: "Home", href: "/" },
-  { label: "Motorists", href: "/motorists" },
-  { label: "Service Providers", href: "/providers" },
-  { label: "911", href: "/911" },
-  { label: "Support", href: "/support" },
-  { label: "Glossary", href: "/glossary" },
-  { label: "FAQs", href: "/faqs" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
-  { label: "Terms of Service", href: "/terms" },
-  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Home", href: "/", index: 0  },
+  { label: "Motorists", href: "/motorists", index: 1 },
+  { label: "Service Providers", href: "/service-providers", index: 2 },
+  { label: "911", href: "/911", index: 3 },
+  { label: "Support", href: "/support", index: 4 },
+  { label: "Glossary", href: "/glossary", index: 5 },
+  { label: "FAQs", href: "/faqs", index: 6 },
+  { label: "Services", href: "/services", index: 7 },
+  { label: "Contact", href: "/contact", index: 8 },
+  { label: "Terms of Service", href: "/terms", index: 9 },
+  { label: "Privacy Policy", href: "/privacy", index: 10 },
 ];
 
 const downloadLinks = [
@@ -137,13 +137,13 @@ export default function Header({ contactNumber }) {
             <X className="h-6 w-6" />
           </button>
         </div>
-        <nav className="flex flex-col overflow-y-auto py-6">
-          {sideMenuLinks.map(({ label, href }) => (
+        <nav className="flex flex-col overflow-y-auto py-2">
+          {sideMenuLinks.map(({ label, href, index }) => (
             <Link
               key={href}
               href={href}
               onClick={closeMenu}
-              className={`px-6 py-3 text-left text-base font-medium ${router.pathname === href
+              className={`px-4 py-0 ${index === 4 || index === 7 || index === 9 ? "pt-4" : "pt-0"} text-left text-base font-semibold ${router.pathname === href
                   ? "text-primary"
                   : "text-gray-900 hover:text-primary"
                 }`}
@@ -151,14 +151,14 @@ export default function Header({ contactNumber }) {
               {label}
             </Link>
           ))}
-          <div className="mt-4 border-t border-gray-200 px-6 pt-4">
-            <p className="text-sm font-bold text-gray-900">Downloads</p>
+          <div className="mt-4 border-t border-gray-200 px-4 pt-4">
+            <p className="text-sm font-bold text-[#4d6c7d]">Downloads</p>
             {downloadLinks.map(({ label, href }) => (
               <Link
                 key={href}
                 href={href}
                 onClick={closeMenu}
-                className="block py-2 text-base font-medium text-gray-900 hover:text-primary"
+                className="block py-0.5 px-4 text-base font-semibold text-gray-900 hover:text-primary"
               >
                 {label}
               </Link>
