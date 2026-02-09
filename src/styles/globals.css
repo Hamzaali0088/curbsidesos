@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+/* Book (lighter) – used for font-light */
+@font-face {
+  font-family: "Circular Std";
+  src: url("/font/circular-std/CircularStd-Book.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium – default body weight */
 @font-face {
   font-family: "Circular Std";
   src: url("/font/circular-std-medium-500.ttf") format("truetype");
@@ -15,6 +25,9 @@
   --secondary: #AE4F2E;
   --font-circular: "Circular Std", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* System font stack has real light (300) weight for paragraph text */
+  --font-light-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 }
 
 @theme inline {

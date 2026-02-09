@@ -188,24 +188,28 @@ export default function ServiceDetailPage() {
                         sizes="(max-width: 768px) 100vw, 42rem"
                       />
                     </div>
-                    <ul className="mt-10 list-none space-y-8">
+                    <ul className="mt-10 list-none space-y-4">
                       {emergencyResources?.slice(0, 3).map(({ serviceId, title, description }) => (
-                        <li key={serviceId}>
+                        <li key={serviceId} className="hover:bg-gray-100 p-4 rounded-lg">
+                          <Link href={`/services/${serviceId}`}> 
                           <h3 className="text-lg font-bold text-gray-900">{title}</h3>
                           <Paragraph className="">
                             {description}
                           </Paragraph>
+                          </Link>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <ul className="mt-10 list-none space-y-8">
+                  <ul className="mt-10 list-none space-y-4">
                     {emergencyResources?.slice(3).map(({ serviceId, title, description }) => (
-                      <li key={serviceId}>
+                      <li key={serviceId} className="hover:bg-gray-100 p-4 cursor-pointer rounded-lg">
+                        <Link href={`/services/${serviceId}`}> 
                         <h3 className="text-lg font-bold text-gray-900">{title}</h3>
                         <Paragraph className="">
                           {description}
                         </Paragraph >
+                        </Link>
                       </li>
                     ))}
                   </ul>

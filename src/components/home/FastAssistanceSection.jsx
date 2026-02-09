@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "@/components/common/Container";
 import Heading2 from "../common/Heading2";
+import Paragraph from "../common/Paragraph";
 
 const steps = [
   {
@@ -51,7 +52,7 @@ export default function FastAssistanceSection() {
                   </span>
                   <div>
                     <h3 className="font-semibold text-gray-900">{title}</h3>
-                    <p className="mt-1 text-gray-600">{description}</p>
+                    <Paragraph className="mt-1 ">{description}</Paragraph>
                   </div>
                 </li>
               ))}

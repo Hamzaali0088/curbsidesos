@@ -146,7 +146,7 @@ export default function Header({ contactNumber }) {
               key={href}
               href={href}
               onClick={closeMenu}
-              className={`px-4 py-0.5 ${index === 4 || index === 7 || index === 9 ? "pt-4" : "pt-0"} text-left text-base font-light ${router.pathname === href
+              className={`px-4 py-0.5 ${index === 4 || index === 7 || index === 9 ? "pt-4" : "pt-0"} text-left text-base font-normal ${'var(--font-light-stack)'} ${router.pathname === href
                   ? "text-primary"
                   : "text-gray-900 hover:text-primary"
                 }`}
@@ -164,16 +164,16 @@ export default function Header({ contactNumber }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={closeMenu}
-                  className="block py-0.5 px-4 text-base font-semibold text-gray-900 hover:text-primary"
+                  className={`block py-0.5 px-4 text-base font-normal text-gray-900 hover:text-primary ${'var(--font-light-stack)'}`}
                 >
-                  {label}
+                  {label}ll
                 </a>
               ) : (
                 <Link
                   key={label}
                   href={href}
                   onClick={closeMenu}
-                  className="block py-0.5 px-4 text-base font-semibold text-gray-900 hover:text-primary"
+                  className="block py-0.5 px-4 text-base font-semibold text-gray-900 hover:text-primary ${'var(--font-light-stack)'}"
                 >
                   {label}
                 </Link>

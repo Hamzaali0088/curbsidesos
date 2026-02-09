@@ -24,7 +24,7 @@ const HeroSection = forwardRef(function HeroSection(_, ref) {
               <span>assistance—fast</span>
             </span>
           </h1>
-          <Paragraph className="mt-6 max-w-sm mx-auto">
+          <Paragraph className="mt-6 !text-lg md:!text-xl max-w-sm mx-auto">
             Get quotes with ETAs from local insured providers—in three minutes or
             less.
           </Paragraph>

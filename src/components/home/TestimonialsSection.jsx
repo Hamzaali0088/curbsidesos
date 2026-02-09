@@ -66,7 +66,7 @@ export default function TestimonialsSection() {
             >
               <StarRating />
               <h3 className="my-3 font-bold text-gray-900 text-lg md:text-[22px]">&quot;{title}&quot;</h3>
-              <Paragraph className="">
+              <Paragraph className="font-light">
                 {body}
               </Paragraph>
               <p className="mt-4 text-xs text-gray-500">{source}</p>

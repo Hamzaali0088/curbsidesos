@@ -16,7 +16,7 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
         className="flex w-full items-center justify-between py-2 text-left font-medium text-gray-900 transition-colors hover:text-primary"
         aria-expanded={isOpen}
       >
-        <span className="text-lg font-light text-gray-900">{question}</span>
+        <span className="text-base font-medium text-gray-900">{question}</span>
         <ChevronDown
           className={`h-5 w-5 shrink-0 text-gray-500 transition-transform duration-500 ${
             isOpen ? "rotate-180" : ""
@@ -30,7 +30,7 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
       >
         <div className="min-h-0 overflow-hidden">
           <div className="pb-5 pr-8 text-gray-600">
-            <p className="text-base font-normal  leading-5.5 text-[#4D6C7D] text-left">{answer}</p>
+            <Paragraph className="text-left">{answer}</Paragraph>
           </div>
         </div>
       </div>
@@ -54,10 +54,10 @@ export default function FaqsPage() {
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Frequently Asked Questions
             </h1>
-            <p className="mt-3 text-base text-gray-700 sm:text-lg">
+            <Paragraph className="mt-3 text-base text-gray-700 sm:text-lg">
               Find quick answers to common questions about getting roadside
               assistance through Curbside SOS.
-            </p>
+            </Paragraph >
 
             <div className="mt-8 space-y-12">
               {categories.map((category) => {
