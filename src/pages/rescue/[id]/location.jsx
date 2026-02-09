@@ -38,6 +38,29 @@ export default function RescueLocationPage() {
       .catch(() => {});
   }, []);
 
+  // Pre-fill from persisted location (e.g. after "Allow Current Location")
+  useEffect(() => {
+    if (typeof window === "undefined" || !id) return;
+    try {
+      const stored = window.localStorage.getItem(
+        `curbsidesos_rescue_${id}_location`
+      );
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (
+          parsed &&
+          typeof parsed.latitude === "number" &&
+          typeof parsed.longitude === "number"
+        ) {
+          setSelectedLocation(parsed);
+          setQuery(parsed.address || "Current location");
+        }
+      }
+    } catch (e) {
+      console.error("Failed to read stored location", e);
+    }
+  }, [id]);
+
   const suggestions = useMemo(() => {
     if (!query.trim()) return locations.slice(0, 8);
     const q = query.toLowerCase();

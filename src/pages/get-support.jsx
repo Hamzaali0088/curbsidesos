@@ -2,7 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ChevronRight, Send } from "lucide-react";
+import { ChevronRight, Send, Loader2 } from "lucide-react";
 import Header from "@/components/home/Header";
 import Container from "@/components/common/Container";
 import Paragraph from "@/components/common/Paragraph";
@@ -17,6 +17,8 @@ export default function GetSupport() {
   const [selectedServiceId, setSelectedServiceId] = useState(null);
   const [modalServiceId, setModalServiceId] = useState(null);
   const [activeTab, setActiveTab] = useState("services"); // 'services' | 'details'
+  const [locationLoading, setLocationLoading] = useState(false);
+  const [locationError, setLocationError] = useState(null);
 
   const getServiceById = (id) =>
     services.find((service) => service.id === id) || services[0];
@@ -32,6 +34,53 @@ export default function GetSupport() {
 
   const closeModal = () => {
     setModalServiceId(null);
+    setLocationError(null);
+  };
+
+  const allowCurrentLocation = () => {
+    if (typeof window === "undefined" || !window.navigator?.geolocation) {
+      setLocationError("Location is not supported in this browser.");
+      return;
+    }
+    setLocationError(null);
+    setLocationLoading(true);
+    window.navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const rescueId =
+          typeof crypto !== "undefined" && crypto.randomUUID
+            ? crypto.randomUUID()
+            : "9512ce6c-a5e8-4e75-b169-44ce13323229";
+        const serviceId = modalServiceId || "flat-tire";
+        const location = {
+          id: "current",
+          address: "Current location",
+          latitude: pos.coords.latitude,
+          longitude: pos.coords.longitude,
+        };
+        try {
+          window.localStorage.setItem(
+            `curbsidesos_rescue_${rescueId}_location`,
+            JSON.stringify(location)
+          );
+        } catch (e) {
+          console.error("Failed to store location", e);
+        }
+        setLocationLoading(false);
+        closeModal();
+        router.push(`/rescue/${rescueId}/location?service=${serviceId}`);
+      },
+      (err) => {
+        setLocationLoading(false);
+        if (err.code === 1) {
+          setLocationError("Location permission denied. You can enter your address manually.");
+        } else if (err.code === 2) {
+          setLocationError("Location unavailable. Try entering your address manually.");
+        } else {
+          setLocationError("Unable to get location. Try entering your address manually.");
+        }
+      },
+      { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 }
+    );
   };
 
   const openLocationManual = () => {
@@ -203,16 +252,32 @@ export default function GetSupport() {
               <div className="mt-8 space-y-4">
                 <button
                   type="button"
-                  onClick={closeModal}
-                  className="flex w-full items-center justify-center gap-2 text-sm md:text-base rounded-lg bg-primary px-4 py-3 font-bold uppercase tracking-wide text-white transition-colors hover:bg-secondary"
+                  onClick={allowCurrentLocation}
+                  disabled={locationLoading}
+                  className="flex w-full items-center justify-center gap-2 text-sm md:text-base rounded-lg bg-primary px-4 py-3 font-bold uppercase tracking-wide text-white transition-colors hover:bg-secondary disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <Send className="h-5 w-5" />
-                  Allow Current Location
+                  {locationLoading ? (
+                    <>
+                      <Loader2 className="h-5 w-5 animate-spin" />
+                      Getting location…
+                    </>
+                  ) : (
+                    <>
+                      <Send className="h-5 w-5" />
+                      Allow Current Location
+                    </>
+                  )}
                 </button>
+                {locationError && (
+                  <p className="text-sm text-red-600" role="alert">
+                    {locationError}
+                  </p>
+                )}
                 <button
                   type="button"
                   onClick={openLocationManual}
-                  className="block w-full text-center text-sm font-medium text-primary hover:text-secondary hover:underline"
+                  disabled={locationLoading}
+                  className="block w-full text-center text-sm font-medium text-primary hover:text-secondary hover:underline disabled:opacity-70"
                 >
                   Enter location manually
                 </button>
